@@ -144,7 +144,5 @@ fun List<ThreadTask>.toUnixCode(variant: Int): String {
         }
     }
     sb.append("    return 0;\n}")
-    sb.append("    \n")
-    sb.append("    \n")
     return sb.toString()
 }

@@ -306,6 +306,4 @@ int lab2_init() {
     sem_unlink("/my_semaphore_i");
     sem_unlink("/my_semaphore_k");
     return 0;
-}    
-    
-
+}
