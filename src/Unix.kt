@@ -38,7 +38,7 @@ fun List<ThreadTask>.toUnixCode(variant: Int): String {
                 sb.append(it.name)
             }
         }
-        sb.appendln(";")
+        sb.append(";\n")
     }
     if (this.isNotEmpty()) {
         sb.append("pthread_t ")
@@ -53,7 +53,7 @@ fun List<ThreadTask>.toUnixCode(variant: Int): String {
                 sb.append(it.name)
 
         }
-        sb.appendln(";")
+        sb.append(";\n")
     }
     sb.append(
         "unsigned int lab2_task_number() {\n" +
@@ -103,7 +103,7 @@ fun List<ThreadTask>.toUnixCode(variant: Int): String {
         this.sortedBy { it.name }.forEach {
             if (it.waitedBy > 0) {
                     sb.append(
-                        "    if ((semaphore_${it.name} = sem_open(\"/my_semaphore_${it.name}\", O_CREAT, 0777, 1)) == SEM_FAILED) {\n" +
+                        "    if ((semaphore_${it.name} = sem_open(\"/my_semaphore_${it.name}\", O_CREAT, 0777, 0)) == SEM_FAILED) {\n" +
                             "        std::cerr << \"Semaphore ${it.name.capitalize()} init failed\" << std::endl;\n" +
                             "        return 1;\n" +
                             "    }\n"

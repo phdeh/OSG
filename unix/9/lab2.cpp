@@ -28,7 +28,7 @@ sem_t *semaphore_a,
       *semaphore_e,
       *semaphore_f,
       *semaphore_g,
-      *semaphore_h;
+      *semaphore_h;
 pthread_t thread_id_a,
           thread_id_b,
           thread_id_c,
@@ -38,7 +38,7 @@ pthread_t thread_id_a,
           thread_id_g,
           thread_id_h,
           thread_id_i,
-          thread_id_k;
+          thread_id_k;
 unsigned int lab2_task_number() {
     return 9;
 }
@@ -185,35 +185,35 @@ int lab2_init() {
         std::cout << "Mutex init failed" << std::endl;
         return 1;
     }
-    if ((semaphore_a = sem_open("/my_semaphore_a", O_CREAT, 0777, 1)) == SEM_FAILED) {
+    if ((semaphore_a = sem_open("/my_semaphore_a", O_CREAT, 0777, 0)) == SEM_FAILED) {
         std::cerr << "Semaphore A init failed" << std::endl;
         return 1;
     }
-    if ((semaphore_b = sem_open("/my_semaphore_b", O_CREAT, 0777, 1)) == SEM_FAILED) {
+    if ((semaphore_b = sem_open("/my_semaphore_b", O_CREAT, 0777, 0)) == SEM_FAILED) {
         std::cerr << "Semaphore B init failed" << std::endl;
         return 1;
     }
-    if ((semaphore_c = sem_open("/my_semaphore_c", O_CREAT, 0777, 1)) == SEM_FAILED) {
+    if ((semaphore_c = sem_open("/my_semaphore_c", O_CREAT, 0777, 0)) == SEM_FAILED) {
         std::cerr << "Semaphore C init failed" << std::endl;
         return 1;
     }
-    if ((semaphore_d = sem_open("/my_semaphore_d", O_CREAT, 0777, 1)) == SEM_FAILED) {
+    if ((semaphore_d = sem_open("/my_semaphore_d", O_CREAT, 0777, 0)) == SEM_FAILED) {
         std::cerr << "Semaphore D init failed" << std::endl;
         return 1;
     }
-    if ((semaphore_e = sem_open("/my_semaphore_e", O_CREAT, 0777, 1)) == SEM_FAILED) {
+    if ((semaphore_e = sem_open("/my_semaphore_e", O_CREAT, 0777, 0)) == SEM_FAILED) {
         std::cerr << "Semaphore E init failed" << std::endl;
         return 1;
     }
-    if ((semaphore_f = sem_open("/my_semaphore_f", O_CREAT, 0777, 1)) == SEM_FAILED) {
+    if ((semaphore_f = sem_open("/my_semaphore_f", O_CREAT, 0777, 0)) == SEM_FAILED) {
         std::cerr << "Semaphore F init failed" << std::endl;
         return 1;
     }
-    if ((semaphore_g = sem_open("/my_semaphore_g", O_CREAT, 0777, 1)) == SEM_FAILED) {
+    if ((semaphore_g = sem_open("/my_semaphore_g", O_CREAT, 0777, 0)) == SEM_FAILED) {
         std::cerr << "Semaphore G init failed" << std::endl;
         return 1;
     }
-    if ((semaphore_h = sem_open("/my_semaphore_h", O_CREAT, 0777, 1)) == SEM_FAILED) {
+    if ((semaphore_h = sem_open("/my_semaphore_h", O_CREAT, 0777, 0)) == SEM_FAILED) {
         std::cerr << "Semaphore H init failed" << std::endl;
         return 1;
     }
