@@ -1,4 +1,5 @@
 import java.io.File
+import java.io.PrintWriter
 import java.util.*
 
 fun main() {
@@ -14,6 +15,8 @@ fun main() {
             println(" |    | - waits for: ${i.waitsFor.join()}")
             println(" |    | - waited by: ${i.waitedBy}")
         }
+        tt.toWindowsCode(it).writeTo("windows/$it/lab3.cpp")
+        tt.toUnixCode(it).writeTo("unix/$it/lab2.cpp")
     }
 }
 
@@ -24,7 +27,7 @@ fun generateThreadTasks(program: List<List<String>>): List<ThreadTask> {
             if (it in list) {
                 if (it.didNotStartedYet) {
                     it.startsOn = step
-                    it.waitsFor += threads.filter { i -> i.alreadyDone }
+                    it.waitsFor += threads.filter { i -> i.alreadyDone && i.stopsOn != step }
                 }
                 it.iterations++
             } else if (it.alreadyStarted && it.didNotDoneYet)
@@ -47,6 +50,15 @@ fun readProgram(variant: Int): List<List<String>> {
     while (scanner.hasNextLine())
         columns += scanner.nextLine().split("").toList().filter { it.isNotEmpty() }
     return columns.toList()
+}
+
+fun String.writeTo(path: String) {
+    File(path.substring(0, path.lastIndexOf('/'))).mkdirs()
+    val pw = PrintWriter(File(path))
+    this.split('\n').forEach {
+        pw.println(it)
+    }
+    pw.close()
 }
 
 data class ThreadTask(
