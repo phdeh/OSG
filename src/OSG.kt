@@ -16,6 +16,10 @@ fun main() {
             println(" |    | - waited by: ${i.waitedBy}")
         }
         tt.toWindowsCode(it).writeTo("windows/$it/lab3.cpp")
+        windowsMain.writeTo("windows/$it/main.cpp")
+        windowsLabH.writeTo("windows/$it/lab3.h")
+        windowsRunBat.writeTo("windows/$it/run.bat")
+
         tt.toUnixCode(it).writeTo("unix/$it/lab2.cpp")
     }
 }
