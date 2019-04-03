@@ -12,7 +12,8 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
     sb.append(
         "\n#define THREADCOUNT "
     )
-    sb.appendln(this.size)
+    sb.append(this.size)
+    sb.append('\n')
     if (this.any { it.waitedBy > 0 }) {
         sb.append("HANDLE ")
         var first = true
