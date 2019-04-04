@@ -18,6 +18,19 @@ HANDLE semaphore_a,
 
 HANDLE ghMutex; // https://docs.microsoft.com/en-us/windows/desktop/sync/using-mutex-objects
 
+DWORD WINAPI ThreadProcA( LPVOID lpParam );
+DWORD WINAPI ThreadProcB( LPVOID lpParam );
+DWORD WINAPI ThreadProcC( LPVOID lpParam );
+DWORD WINAPI ThreadProcD( LPVOID lpParam );
+DWORD WINAPI ThreadProcE( LPVOID lpParam );
+DWORD WINAPI ThreadProcF( LPVOID lpParam );
+DWORD WINAPI ThreadProcG( LPVOID lpParam );
+DWORD WINAPI ThreadProcH( LPVOID lpParam );
+DWORD WINAPI ThreadProcI( LPVOID lpParam );
+DWORD WINAPI ThreadProcK( LPVOID lpParam );
+DWORD WINAPI ThreadProcM( LPVOID lpParam );
+DWORD WINAPI ThreadProcN( LPVOID lpParam );
+
 unsigned int lab3_task_number()
 {
     return 5;
@@ -150,8 +163,193 @@ int lab3_init()
         return 1;
     }
 
+
+    aThread[0] = CreateThread( 
+    NULL,
+        0,
+        (LPTHREAD_START_ROUTINE) ThreadProcA, 
+        NULL,
+        0,
+        &ThreadID);
+
+    if( aThread[0] == NULL )
+    {
+        printf("CreateThread error: %d\n", GetLastError());
+        return 1;
+    }
+
+    aThread[1] = CreateThread( 
+    NULL,
+        0,
+        (LPTHREAD_START_ROUTINE) ThreadProcB, 
+        NULL,
+        0,
+        &ThreadID);
+
+    if( aThread[1] == NULL )
+    {
+        printf("CreateThread error: %d\n", GetLastError());
+        return 1;
+    }
+
+    aThread[2] = CreateThread( 
+    NULL,
+        0,
+        (LPTHREAD_START_ROUTINE) ThreadProcC, 
+        NULL,
+        0,
+        &ThreadID);
+
+    if( aThread[2] == NULL )
+    {
+        printf("CreateThread error: %d\n", GetLastError());
+        return 1;
+    }
+
+    aThread[3] = CreateThread( 
+    NULL,
+        0,
+        (LPTHREAD_START_ROUTINE) ThreadProcD, 
+        NULL,
+        0,
+        &ThreadID);
+
+    if( aThread[3] == NULL )
+    {
+        printf("CreateThread error: %d\n", GetLastError());
+        return 1;
+    }
+
+    aThread[4] = CreateThread( 
+    NULL,
+        0,
+        (LPTHREAD_START_ROUTINE) ThreadProcE, 
+        NULL,
+        0,
+        &ThreadID);
+
+    if( aThread[4] == NULL )
+    {
+        printf("CreateThread error: %d\n", GetLastError());
+        return 1;
+    }
+
+    aThread[5] = CreateThread( 
+    NULL,
+        0,
+        (LPTHREAD_START_ROUTINE) ThreadProcF, 
+        NULL,
+        0,
+        &ThreadID);
+
+    if( aThread[5] == NULL )
+    {
+        printf("CreateThread error: %d\n", GetLastError());
+        return 1;
+    }
+
+    aThread[6] = CreateThread( 
+    NULL,
+        0,
+        (LPTHREAD_START_ROUTINE) ThreadProcG, 
+        NULL,
+        0,
+        &ThreadID);
+
+    if( aThread[6] == NULL )
+    {
+        printf("CreateThread error: %d\n", GetLastError());
+        return 1;
+    }
+
+    aThread[7] = CreateThread( 
+    NULL,
+        0,
+        (LPTHREAD_START_ROUTINE) ThreadProcH, 
+        NULL,
+        0,
+        &ThreadID);
+
+    if( aThread[7] == NULL )
+    {
+        printf("CreateThread error: %d\n", GetLastError());
+        return 1;
+    }
+
+    aThread[8] = CreateThread( 
+    NULL,
+        0,
+        (LPTHREAD_START_ROUTINE) ThreadProcI, 
+        NULL,
+        0,
+        &ThreadID);
+
+    if( aThread[8] == NULL )
+    {
+        printf("CreateThread error: %d\n", GetLastError());
+        return 1;
+    }
+
+    aThread[9] = CreateThread( 
+    NULL,
+        0,
+        (LPTHREAD_START_ROUTINE) ThreadProcK, 
+        NULL,
+        0,
+        &ThreadID);
+
+    if( aThread[9] == NULL )
+    {
+        printf("CreateThread error: %d\n", GetLastError());
+        return 1;
+    }
+
+    aThread[10] = CreateThread( 
+    NULL,
+        0,
+        (LPTHREAD_START_ROUTINE) ThreadProcM, 
+        NULL,
+        0,
+        &ThreadID);
+
+    if( aThread[10] == NULL )
+    {
+        printf("CreateThread error: %d\n", GetLastError());
+        return 1;
+    }
+
+    aThread[11] = CreateThread( 
+    NULL,
+        0,
+        (LPTHREAD_START_ROUTINE) ThreadProcN, 
+        NULL,
+        0,
+        &ThreadID);
+
+    if( aThread[11] == NULL )
+    {
+        printf("CreateThread error: %d\n", GetLastError());
+        return 1;
+    }
+
+    WaitForMultipleObjects(THREADCOUNT, aThread, TRUE, INFINITE);
+    for( i=0; i < THREADCOUNT; i++ )
+        CloseHandle(aThread[i]);
+
+    CloseHandle(semaphore_a);
+    CloseHandle(semaphore_b);
+    CloseHandle(semaphore_c);
+    CloseHandle(semaphore_d);
+    CloseHandle(semaphore_e);
+    CloseHandle(semaphore_f);
+    CloseHandle(semaphore_g);
+    CloseHandle(semaphore_h);
+    CloseHandle(semaphore_i);
+    CloseHandle(semaphore_k);
+    CloseHandle(ghMutex);
     return 0;
-}DWORD WINAPI ThreadProcA( LPVOID lpParam )
+}
+DWORD WINAPI ThreadProcA( LPVOID lpParam )
 {
     UNREFERENCED_PARAMETER(lpParam);
 

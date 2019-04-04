@@ -32,8 +32,12 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
     sb.append(
         "HANDLE ghMutex; // https://docs.microsoft.com/en-us/windows/desktop/sync/using-mutex-objects\n\n"
     )
+    this.sortedBy { it.name }.forEach {
+        sb.append("DWORD WINAPI ThreadProc${it.name.capitalize()}( LPVOID lpParam );\n")
+    }
+
     sb.append(
-        "unsigned int lab3_task_number()\n" +
+        "\nunsigned int lab3_task_number()\n" +
                 "{\n" +
                 "    return $variant;\n" +
                 "}\n" +
@@ -69,9 +73,41 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
             )
         }
     }
+    this.sortedBy { it.name }.forEachIndexed { i, it ->
+        sb.append("\n" +
+                "    aThread[$i] = CreateThread( \n" +
+                "    NULL,\n" +
+                "        0,\n" +
+                "        (LPTHREAD_START_ROUTINE) ThreadProc${it.name.capitalize()}, \n" +
+                "        NULL,\n" +
+                "        0,\n" +
+                "        &ThreadID" +
+                ");\n" +
+                "\n" +
+                "    if( aThread[$i] == NULL )\n" +
+                "    {\n" +
+                "        printf(\"CreateThread error: %d\\n\", GetLastError());\n" +
+                "        return 1;\n" +
+                "    }\n")
+    }
+    sb.append(
+            "\n    WaitForMultipleObjects(THREADCOUNT, aThread, TRUE, INFINITE);\n" +
+            "    for( i=0; i < THREADCOUNT; i++ )\n" +
+            "        CloseHandle(aThread[i]);\n" +
+            "\n")
+    this.sortedBy { it.name }.forEach {
+        if (it.waitedBy > 0) {
+            sb.append(
+                "    CloseHandle(semaphore_${it.name});\n"
+            )
+        }
+    }
+    sb.append(
+        "    CloseHandle(ghMutex);\n"
+    )
     sb.append(
         "    return 0;\n" +
-                "}"
+                "}\n"
     )
     if (this.isNotEmpty()) {
         this.forEach {
