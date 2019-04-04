@@ -3,7 +3,7 @@
 #include <windows.h>
 #include <iostream>
 
-#define MAX_SEM_COUNT 10
+#define MAX_SEM_COUNT 11
 #define THREADCOUNT 12
 HANDLE semaphore_a,
        semaphore_b,
@@ -361,7 +361,6 @@ DWORD WINAPI ThreadProcA( LPVOID lpParam )
         switch (dwWaitResult)
         {
             case WAIT_OBJECT_0:
-                printf("Thread %d: wait succeeded\n", GetCurrentThreadId());
                 for (int i = 0; i < 4; i++)
                 {
                     bool waitingForMutex = TRUE;
@@ -374,7 +373,7 @@ DWORD WINAPI ThreadProcA( LPVOID lpParam )
                         switch (dwWaitResult)
                         {
                             case WAIT_OBJECT_0:
-                                printf("a");
+                                printf("A");
                                 if (!ReleaseMutex(ghMutex))
                                 {
                                     printf("ReleaseMutex error: %d\n", GetLastError());
@@ -417,7 +416,6 @@ DWORD WINAPI ThreadProcC( LPVOID lpParam )
         switch (dwWaitResult)
         {
             case WAIT_OBJECT_0:
-                printf("Thread %d: wait succeeded\n", GetCurrentThreadId());
                 for (int i = 0; i < 12; i++)
                 {
                     bool waitingForMutex = TRUE;
@@ -430,7 +428,7 @@ DWORD WINAPI ThreadProcC( LPVOID lpParam )
                         switch (dwWaitResult)
                         {
                             case WAIT_OBJECT_0:
-                                printf("c");
+                                printf("C");
                                 if (!ReleaseMutex(ghMutex))
                                 {
                                     printf("ReleaseMutex error: %d\n", GetLastError());
@@ -470,13 +468,12 @@ DWORD WINAPI ThreadProcB( LPVOID lpParam )
     while (TRUE) {
         dwWaitResult = WaitForSingleObject(
             semaphore_a,
-            1000L
+            10000L
         );
 
         switch (dwWaitResult)
         {
             case WAIT_OBJECT_0:
-                printf("Thread %d: wait succeeded\n", GetCurrentThreadId());
                 for (int i = 0; i < 4; i++)
                 {
                     bool waitingForMutex = TRUE;
@@ -489,7 +486,7 @@ DWORD WINAPI ThreadProcB( LPVOID lpParam )
                         switch (dwWaitResult)
                         {
                             case WAIT_OBJECT_0:
-                                printf("b");
+                                printf("B");
                                 if (!ReleaseMutex(ghMutex))
                                 {
                                     printf("ReleaseMutex error: %d\n", GetLastError());
@@ -529,13 +526,12 @@ DWORD WINAPI ThreadProcG( LPVOID lpParam )
     while (TRUE) {
         dwWaitResult = WaitForSingleObject(
             semaphore_a,
-            1000L
+            10000L
         );
 
         switch (dwWaitResult)
         {
             case WAIT_OBJECT_0:
-                printf("Thread %d: wait succeeded\n", GetCurrentThreadId());
                 for (int i = 0; i < 12; i++)
                 {
                     bool waitingForMutex = TRUE;
@@ -548,7 +544,7 @@ DWORD WINAPI ThreadProcG( LPVOID lpParam )
                         switch (dwWaitResult)
                         {
                             case WAIT_OBJECT_0:
-                                printf("g");
+                                printf("G");
                                 if (!ReleaseMutex(ghMutex))
                                 {
                                     printf("ReleaseMutex error: %d\n", GetLastError());
@@ -588,13 +584,12 @@ DWORD WINAPI ThreadProcE( LPVOID lpParam )
     while (TRUE) {
         dwWaitResult = WaitForSingleObject(
             semaphore_a,
-            1000L
+            10000L
         );
 
         switch (dwWaitResult)
         {
             case WAIT_OBJECT_0:
-                printf("Thread %d: wait succeeded\n", GetCurrentThreadId());
                 for (int i = 0; i < 4; i++)
                 {
                     bool waitingForMutex = TRUE;
@@ -607,7 +602,7 @@ DWORD WINAPI ThreadProcE( LPVOID lpParam )
                         switch (dwWaitResult)
                         {
                             case WAIT_OBJECT_0:
-                                printf("e");
+                                printf("E");
                                 if (!ReleaseMutex(ghMutex))
                                 {
                                     printf("ReleaseMutex error: %d\n", GetLastError());
@@ -654,13 +649,12 @@ DWORD WINAPI ThreadProcD( LPVOID lpParam )
             3,
             semaphores,
             TRUE,
-            1000L
+            10000L
         );
 
         switch (dwWaitResult)
         {
             case WAIT_OBJECT_0:
-                printf("Thread %d: wait succeeded\n", GetCurrentThreadId());
                 for (int i = 0; i < 4; i++)
                 {
                     bool waitingForMutex = TRUE;
@@ -673,7 +667,7 @@ DWORD WINAPI ThreadProcD( LPVOID lpParam )
                         switch (dwWaitResult)
                         {
                             case WAIT_OBJECT_0:
-                                printf("d");
+                                printf("D");
                                 if (!ReleaseMutex(ghMutex))
                                 {
                                     printf("ReleaseMutex error: %d\n", GetLastError());
@@ -720,13 +714,12 @@ DWORD WINAPI ThreadProcF( LPVOID lpParam )
             3,
             semaphores,
             TRUE,
-            1000L
+            10000L
         );
 
         switch (dwWaitResult)
         {
             case WAIT_OBJECT_0:
-                printf("Thread %d: wait succeeded\n", GetCurrentThreadId());
                 for (int i = 0; i < 4; i++)
                 {
                     bool waitingForMutex = TRUE;
@@ -739,7 +732,7 @@ DWORD WINAPI ThreadProcF( LPVOID lpParam )
                         switch (dwWaitResult)
                         {
                             case WAIT_OBJECT_0:
-                                printf("f");
+                                printf("F");
                                 if (!ReleaseMutex(ghMutex))
                                 {
                                     printf("ReleaseMutex error: %d\n", GetLastError());
@@ -789,13 +782,12 @@ DWORD WINAPI ThreadProcH( LPVOID lpParam )
             6,
             semaphores,
             TRUE,
-            1000L
+            10000L
         );
 
         switch (dwWaitResult)
         {
             case WAIT_OBJECT_0:
-                printf("Thread %d: wait succeeded\n", GetCurrentThreadId());
                 for (int i = 0; i < 4; i++)
                 {
                     bool waitingForMutex = TRUE;
@@ -808,7 +800,7 @@ DWORD WINAPI ThreadProcH( LPVOID lpParam )
                         switch (dwWaitResult)
                         {
                             case WAIT_OBJECT_0:
-                                printf("h");
+                                printf("H");
                                 if (!ReleaseMutex(ghMutex))
                                 {
                                     printf("ReleaseMutex error: %d\n", GetLastError());
@@ -858,13 +850,12 @@ DWORD WINAPI ThreadProcK( LPVOID lpParam )
             6,
             semaphores,
             TRUE,
-            1000L
+            10000L
         );
 
         switch (dwWaitResult)
         {
             case WAIT_OBJECT_0:
-                printf("Thread %d: wait succeeded\n", GetCurrentThreadId());
                 for (int i = 0; i < 8; i++)
                 {
                     bool waitingForMutex = TRUE;
@@ -877,7 +868,7 @@ DWORD WINAPI ThreadProcK( LPVOID lpParam )
                         switch (dwWaitResult)
                         {
                             case WAIT_OBJECT_0:
-                                printf("k");
+                                printf("K");
                                 if (!ReleaseMutex(ghMutex))
                                 {
                                     printf("ReleaseMutex error: %d\n", GetLastError());
@@ -929,13 +920,12 @@ DWORD WINAPI ThreadProcM( LPVOID lpParam )
             8,
             semaphores,
             TRUE,
-            1000L
+            10000L
         );
 
         switch (dwWaitResult)
         {
             case WAIT_OBJECT_0:
-                printf("Thread %d: wait succeeded\n", GetCurrentThreadId());
                 for (int i = 0; i < 8; i++)
                 {
                     bool waitingForMutex = TRUE;
@@ -948,7 +938,7 @@ DWORD WINAPI ThreadProcM( LPVOID lpParam )
                         switch (dwWaitResult)
                         {
                             case WAIT_OBJECT_0:
-                                printf("m");
+                                printf("M");
                                 if (!ReleaseMutex(ghMutex))
                                 {
                                     printf("ReleaseMutex error: %d\n", GetLastError());
@@ -991,13 +981,12 @@ DWORD WINAPI ThreadProcI( LPVOID lpParam )
             8,
             semaphores,
             TRUE,
-            1000L
+            10000L
         );
 
         switch (dwWaitResult)
         {
             case WAIT_OBJECT_0:
-                printf("Thread %d: wait succeeded\n", GetCurrentThreadId());
                 for (int i = 0; i < 4; i++)
                 {
                     bool waitingForMutex = TRUE;
@@ -1010,7 +999,7 @@ DWORD WINAPI ThreadProcI( LPVOID lpParam )
                         switch (dwWaitResult)
                         {
                             case WAIT_OBJECT_0:
-                                printf("i");
+                                printf("I");
                                 if (!ReleaseMutex(ghMutex))
                                 {
                                     printf("ReleaseMutex error: %d\n", GetLastError());
@@ -1064,13 +1053,12 @@ DWORD WINAPI ThreadProcN( LPVOID lpParam )
             10,
             semaphores,
             TRUE,
-            1000L
+            10000L
         );
 
         switch (dwWaitResult)
         {
             case WAIT_OBJECT_0:
-                printf("Thread %d: wait succeeded\n", GetCurrentThreadId());
                 for (int i = 0; i < 4; i++)
                 {
                     bool waitingForMutex = TRUE;
@@ -1083,7 +1071,7 @@ DWORD WINAPI ThreadProcN( LPVOID lpParam )
                         switch (dwWaitResult)
                         {
                             case WAIT_OBJECT_0:
-                                printf("n");
+                                printf("N");
                                 if (!ReleaseMutex(ghMutex))
                                 {
                                     printf("ReleaseMutex error: %d\n", GetLastError());

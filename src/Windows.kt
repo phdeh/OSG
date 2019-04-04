@@ -8,7 +8,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                 "\n" +
                 "#define MAX_SEM_COUNT "
     )
-    sb.append(this.maxBy { it.waitedBy }?.waitedBy ?: 10)
+    sb.append((this.maxBy { it.waitedBy }?.waitedBy ?: 0) + 1)
     sb.append(
         "\n#define THREADCOUNT "
     )
@@ -129,7 +129,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                     "    while (TRUE) {\n"+
                             "        dwWaitResult = WaitForSingleObject(\n" +
                             "            semaphore_${it.waitsFor.first().name},\n" +
-                            "            1000L\n" +
+                            "            10000L\n" +
                             "        );\n"
                 )
             } else {
@@ -149,7 +149,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                             "            ${it.waitsFor.size},\n" +
                             "            semaphores,\n" +
                             "            TRUE,\n" +
-                            "            1000L\n" +
+                            "            10000L\n" +
                             "        );\n"
                 )
             }
@@ -158,7 +158,6 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                         "        switch (dwWaitResult)\n" +
                         "        {\n" +
                         "            case WAIT_OBJECT_0:\n" +
-                        "                printf(\"Thread %d: wait succeeded\\n\", GetCurrentThreadId());\n" +
                         "                for (int i = 0; i < ${it.iterations * 4}; i++)\n" +
                         "                {\n" +
                         "                    bool waitingForMutex = TRUE;\n" +
@@ -171,7 +170,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                         "                        switch (dwWaitResult)\n" +
                         "                        {\n" +
                         "                            case WAIT_OBJECT_0:\n" +
-                        "                                printf(\"${it.name}\");\n" +
+                        "                                printf(\"${it.name.capitalize()}\");\n" +
                         "                                if (!ReleaseMutex(ghMutex))\n" +
                         "                                {\n" +
                         "                                    printf(\"ReleaseMutex error: %d\\n\", GetLastError());\n" +
