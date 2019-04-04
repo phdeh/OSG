@@ -4,7 +4,7 @@
 #include <iostream>
 
 #define MAX_SEM_COUNT 7
-#define THREADCOUNT 10
+#define THREADCOUNT 10
 HANDLE semaphore_a,
        semaphore_b,
        semaphore_c,
