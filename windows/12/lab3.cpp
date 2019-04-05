@@ -5,15 +5,15 @@
 
 #define MAX_SEM_COUNT 10
 #define THREADCOUNT 10
-HANDLE semaphore_a,
-       semaphore_b,
-       semaphore_c,
-       semaphore_d,
-       semaphore_e,
-       semaphore_f,
-       semaphore_g,
-       semaphore_h,
-       semaphore_i;
+HANDLE SemaphoreA,
+       SemaphoreB,
+       SemaphoreC,
+       SemaphoreD,
+       SemaphoreE,
+       SemaphoreF,
+       SemaphoreG,
+       SemaphoreH,
+       SemaphoreI;
 
 HANDLE ghMutex; // https://docs.microsoft.com/en-us/windows/desktop/sync/using-mutex-objects
 
@@ -50,100 +50,100 @@ int lab3_init()
         return 1;
     }
 
-    semaphore_a = CreateSemaphore(
+    SemaphoreA = CreateSemaphore(
         NULL,
         0,
         MAX_SEM_COUNT,
         NULL);
-    if (semaphore_a == NULL)
+    if (SemaphoreA == NULL)
     {
         printf("CreateSemaphore A error: %d\n", GetLastError());
         return 1;
     }
 
-    semaphore_b = CreateSemaphore(
+    SemaphoreB = CreateSemaphore(
         NULL,
         0,
         MAX_SEM_COUNT,
         NULL);
-    if (semaphore_b == NULL)
+    if (SemaphoreB == NULL)
     {
         printf("CreateSemaphore B error: %d\n", GetLastError());
         return 1;
     }
 
-    semaphore_c = CreateSemaphore(
+    SemaphoreC = CreateSemaphore(
         NULL,
         0,
         MAX_SEM_COUNT,
         NULL);
-    if (semaphore_c == NULL)
+    if (SemaphoreC == NULL)
     {
         printf("CreateSemaphore C error: %d\n", GetLastError());
         return 1;
     }
 
-    semaphore_d = CreateSemaphore(
+    SemaphoreD = CreateSemaphore(
         NULL,
         0,
         MAX_SEM_COUNT,
         NULL);
-    if (semaphore_d == NULL)
+    if (SemaphoreD == NULL)
     {
         printf("CreateSemaphore D error: %d\n", GetLastError());
         return 1;
     }
 
-    semaphore_e = CreateSemaphore(
+    SemaphoreE = CreateSemaphore(
         NULL,
         0,
         MAX_SEM_COUNT,
         NULL);
-    if (semaphore_e == NULL)
+    if (SemaphoreE == NULL)
     {
         printf("CreateSemaphore E error: %d\n", GetLastError());
         return 1;
     }
 
-    semaphore_f = CreateSemaphore(
+    SemaphoreF = CreateSemaphore(
         NULL,
         0,
         MAX_SEM_COUNT,
         NULL);
-    if (semaphore_f == NULL)
+    if (SemaphoreF == NULL)
     {
         printf("CreateSemaphore F error: %d\n", GetLastError());
         return 1;
     }
 
-    semaphore_g = CreateSemaphore(
+    SemaphoreG = CreateSemaphore(
         NULL,
         0,
         MAX_SEM_COUNT,
         NULL);
-    if (semaphore_g == NULL)
+    if (SemaphoreG == NULL)
     {
         printf("CreateSemaphore G error: %d\n", GetLastError());
         return 1;
     }
 
-    semaphore_h = CreateSemaphore(
+    SemaphoreH = CreateSemaphore(
         NULL,
         0,
         MAX_SEM_COUNT,
         NULL);
-    if (semaphore_h == NULL)
+    if (SemaphoreH == NULL)
     {
         printf("CreateSemaphore H error: %d\n", GetLastError());
         return 1;
     }
 
-    semaphore_i = CreateSemaphore(
+    SemaphoreI = CreateSemaphore(
         NULL,
         0,
         MAX_SEM_COUNT,
         NULL);
-    if (semaphore_i == NULL)
+    if (SemaphoreI == NULL)
     {
         printf("CreateSemaphore I error: %d\n", GetLastError());
         return 1;
@@ -294,15 +294,15 @@ int lab3_init()
     for( i=0; i < THREADCOUNT; i++ )
         CloseHandle(aThread[i]);
 
-    CloseHandle(semaphore_a);
-    CloseHandle(semaphore_b);
-    CloseHandle(semaphore_c);
-    CloseHandle(semaphore_d);
-    CloseHandle(semaphore_e);
-    CloseHandle(semaphore_f);
-    CloseHandle(semaphore_g);
-    CloseHandle(semaphore_h);
-    CloseHandle(semaphore_i);
+    CloseHandle(SemaphoreA);
+    CloseHandle(SemaphoreB);
+    CloseHandle(SemaphoreC);
+    CloseHandle(SemaphoreD);
+    CloseHandle(SemaphoreE);
+    CloseHandle(SemaphoreF);
+    CloseHandle(SemaphoreG);
+    CloseHandle(SemaphoreH);
+    CloseHandle(SemaphoreI);
     CloseHandle(ghMutex);
     return 0;
 }
@@ -345,7 +345,7 @@ DWORD WINAPI ThreadProcA( LPVOID lpParam )
                 }
 
                 if (!ReleaseSemaphore(
-                            semaphore_a,
+                            SemaphoreA,
                             9,
                             NULL))
                 {
@@ -403,7 +403,7 @@ DWORD WINAPI ThreadProcB( LPVOID lpParam )
                 }
 
                 if (!ReleaseSemaphore(
-                            semaphore_b,
+                            SemaphoreB,
                             7,
                             NULL))
                 {
@@ -461,7 +461,7 @@ DWORD WINAPI ThreadProcC( LPVOID lpParam )
                 }
 
                 if (!ReleaseSemaphore(
-                            semaphore_c,
+                            SemaphoreC,
                             7,
                             NULL))
                 {
@@ -526,7 +526,7 @@ DWORD WINAPI ThreadProcD( LPVOID lpParam )
                 }
 
                 if (!ReleaseSemaphore(
-                            semaphore_d,
+                            SemaphoreD,
                             3,
                             NULL))
                 {
@@ -591,7 +591,7 @@ DWORD WINAPI ThreadProcE( LPVOID lpParam )
                 }
 
                 if (!ReleaseSemaphore(
-                            semaphore_e,
+                            SemaphoreE,
                             3,
                             NULL))
                 {
@@ -656,7 +656,7 @@ DWORD WINAPI ThreadProcF( LPVOID lpParam )
                 }
 
                 if (!ReleaseSemaphore(
-                            semaphore_f,
+                            SemaphoreF,
                             3,
                             NULL))
                 {
@@ -721,7 +721,7 @@ DWORD WINAPI ThreadProcG( LPVOID lpParam )
                 }
 
                 if (!ReleaseSemaphore(
-                            semaphore_g,
+                            SemaphoreG,
                             1,
                             NULL))
                 {
@@ -789,7 +789,7 @@ DWORD WINAPI ThreadProcH( LPVOID lpParam )
                 }
 
                 if (!ReleaseSemaphore(
-                            semaphore_h,
+                            SemaphoreH,
                             1,
                             NULL))
                 {
@@ -857,7 +857,7 @@ DWORD WINAPI ThreadProcI( LPVOID lpParam )
                 }
 
                 if (!ReleaseSemaphore(
-                            semaphore_i,
+                            SemaphoreI,
                             1,
                             NULL))
                 {

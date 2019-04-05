@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f986218-4502-44e0-a27c-7d7419a8e42b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OSG/OSGKt$join$$inlined$sortBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/OSGKt$join$$inlined$sortBy$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OSG/OSGKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/OSGKt.class" afterDir="false" />
@@ -22,6 +19,9 @@
       <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$$special$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$$special$$inlined$sortedBy$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Windows.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Windows.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/windows/1/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/1/lab3.cpp" afterDir="false" />
@@ -63,26 +63,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OSG.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-164">
+            <state relative-caret-position="135">
               <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/windows/4/lab3.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="998" column="25" lean-forward="true" selection-start-line="998" selection-start-column="25" selection-end-line="998" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../OSGWin/os-task3-phdeh/examples/semaphore.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            <state relative-caret-position="2886">
+              <caret line="926" column="20" selection-start-line="926" selection-start-column="20" selection-end-line="926" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -90,17 +81,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/windows/4/run.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="30">
               <caret line="2" column="97" selection-start-line="2" selection-start-column="97" selection-end-line="2" selection-end-column="97" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Windows.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+            <state relative-caret-position="150">
+              <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -122,7 +113,14 @@
       <find>wait s</find>
       <find>size</find>
       <find>maxBy</find>
+      <find>semaphore_${it.name}</find>
+      <find>capitalze</find>
+      <find>CreateThread</find>
     </findStrings>
+    <replaceStrings>
+      <replace>Semaphore${it.name.capitalze()}</replace>
+      <replace>capitalize</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -138,24 +136,24 @@
         <option value="$PROJECT_DIR$/src/OSG.kt" />
         <option value="$PROJECT_DIR$/../OSGWin/os-task3-phdeh/examples/semaphore.c" />
         <option value="$PROJECT_DIR$/windows/4/run.bat" />
-        <option value="$PROJECT_DIR$/src/Windows.kt" />
         <option value="$PROJECT_DIR$/windows/4/lab3.cpp" />
+        <option value="$PROJECT_DIR$/src/Windows.kt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="14" />
-    <option name="y" value="29" />
-    <option name="width" value="1883" />
-    <option name="height" value="964" />
+    <option name="x" value="707" />
+    <option name="y" value="23" />
+    <option name="width" value="973" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,17 +165,6 @@
               <item name="OSG" type="b2602c69:ProjectViewProjectNode" />
               <item name="OSG" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OSG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OSG" type="462c0819:PsiDirectoryNode" />
-              <item name="unix" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OSG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OSG" type="462c0819:PsiDirectoryNode" />
-              <item name="unix" type="462c0819:PsiDirectoryNode" />
-              <item name="10" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OSG" type="b2602c69:ProjectViewProjectNode" />
@@ -199,6 +186,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554451668407" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -257,7 +245,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1328000" />
+    <option name="totallyTimeSpent" value="3311000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -269,10 +257,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4973545" visible="true" weight="0.26153848" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4973545" visible="true" weight="0.26373628" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -281,15 +269,15 @@
       <window_info id="Favorites" order="6" sideWeight="0.5026455" side_tool="true" weight="0.24939272" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49878544" weight="0.3268206" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49878544" visible="true" weight="0.3262032" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3285968" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49959514" visible="true" weight="0.4866785" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49959514" weight="0.19358289" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50121456" side_tool="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3285968" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32834226" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -361,36 +349,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OSG.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-164">
+        <state relative-caret-position="135">
           <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/windows/4/run.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="30">
           <caret line="2" column="97" selection-start-line="2" selection-start-column="97" selection-end-line="2" selection-end-column="97" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../OSGWin/os-task3-phdeh/examples/semaphore.c">
+    <entry file="file://$PROJECT_DIR$/../OSGWin/os-task3-phdeh/examples/semaphore.c" />
+    <entry file="file://$PROJECT_DIR$/windows/4/lab3.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        <state relative-caret-position="2886">
+          <caret line="926" column="20" selection-start-line="926" selection-start-column="20" selection-end-line="926" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Windows.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/windows/4/lab3.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="998" column="25" lean-forward="true" selection-start-line="998" selection-start-column="25" selection-end-line="998" selection-end-column="25" />
+        <state relative-caret-position="150">
+          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -444,6 +426,18 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

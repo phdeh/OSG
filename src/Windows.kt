@@ -8,7 +8,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                 "\n" +
                 "#define MAX_SEM_COUNT "
     )
-    sb.append((this.maxBy { it.waitedBy }?.waitedBy ?: 0) + 1)
+    sb.append((this.maxBy { it.waitedBy }?.waitedBy ?: 0) * 2)
     sb.append(
         "\n#define THREADCOUNT "
     )
@@ -23,8 +23,8 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                     first = false
                 else
                     sb.append(",\n       ")
-                sb.append("semaphore_")
-                sb.append(it.name)
+                sb.append("Semaphore")
+                sb.append(it.name.capitalize())
             }
         }
         sb.append(";\n\n")
@@ -60,12 +60,12 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
     this.sortedBy { it.name }.forEach {
         if (it.waitedBy > 0) {
             sb.append(
-                "    semaphore_${it.name} = CreateSemaphore(\n" +
+                "    Semaphore${it.name.capitalize()} = CreateSemaphore(\n" +
                         "        NULL,\n" +
                         "        0,\n" +
                         "        MAX_SEM_COUNT,\n" +
                         "        NULL);\n" +
-                        "    if (semaphore_${it.name} == NULL)\n" +
+                        "    if (Semaphore${it.name.capitalize()} == NULL)\n" +
                         "    {\n" +
                         "        printf(\"CreateSemaphore ${it.name.capitalize()} error: %d\\n\", GetLastError());\n" +
                         "        return 1;\n" +
@@ -98,7 +98,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
     this.sortedBy { it.name }.forEach {
         if (it.waitedBy > 0) {
             sb.append(
-                "    CloseHandle(semaphore_${it.name});\n"
+                "    CloseHandle(Semaphore${it.name.capitalize()});\n"
             )
         }
     }
@@ -188,7 +188,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
             if (it.waitedBy > 0) {
                 sb.append(
                             "                if (!ReleaseSemaphore(\n" +
-                            "                            semaphore_${it.name},\n" +
+                            "                            Semaphore${it.name.capitalize()},\n" +
                             "                            ${it.waitedBy},\n" +
                             "                            NULL))\n" +
                             "                {\n" +
