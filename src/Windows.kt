@@ -101,7 +101,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
             if (it.waitedBy > 0) {
                 sb.append(
                     "    semaphore_${it.name} = CreateSemaphore( \n" +
-                            "        NULL,           // default security attributes\n" +
+                            "        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes\n" +
                             "        0,  // initial count\n" +
                             "        ${it.waitedBy},  // maximum count\n" +
                             "        NULL);          // unnamed semaphore" +

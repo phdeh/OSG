@@ -227,7 +227,7 @@ int lab3_init() {
     }
 
     semaphore_a = CreateSemaphore( 
-        NULL,           // default security attributes
+        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
         0,  // initial count
         10,  // maximum count
         NULL);          // unnamed semaphore
@@ -237,7 +237,7 @@ int lab3_init() {
     }
 
     semaphore_b = CreateSemaphore( 
-        NULL,           // default security attributes
+        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
         0,  // initial count
         7,  // maximum count
         NULL);          // unnamed semaphore
@@ -247,7 +247,7 @@ int lab3_init() {
     }
 
     semaphore_c = CreateSemaphore( 
-        NULL,           // default security attributes
+        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
         0,  // initial count
         7,  // maximum count
         NULL);          // unnamed semaphore
@@ -257,7 +257,7 @@ int lab3_init() {
     }
 
     semaphore_d = CreateSemaphore( 
-        NULL,           // default security attributes
+        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
         0,  // initial count
         5,  // maximum count
         NULL);          // unnamed semaphore
@@ -267,7 +267,7 @@ int lab3_init() {
     }
 
     semaphore_e = CreateSemaphore( 
-        NULL,           // default security attributes
+        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
         0,  // initial count
         5,  // maximum count
         NULL);          // unnamed semaphore
@@ -277,7 +277,7 @@ int lab3_init() {
     }
 
     semaphore_f = CreateSemaphore( 
-        NULL,           // default security attributes
+        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
         0,  // initial count
         3,  // maximum count
         NULL);          // unnamed semaphore
@@ -287,7 +287,7 @@ int lab3_init() {
     }
 
     semaphore_g = CreateSemaphore( 
-        NULL,           // default security attributes
+        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
         0,  // initial count
         3,  // maximum count
         NULL);          // unnamed semaphore
@@ -297,7 +297,7 @@ int lab3_init() {
     }
 
     semaphore_h = CreateSemaphore( 
-        NULL,           // default security attributes
+        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
         0,  // initial count
         1,  // maximum count
         NULL);          // unnamed semaphore
@@ -307,7 +307,7 @@ int lab3_init() {
     }
 
     semaphore_i = CreateSemaphore( 
-        NULL,           // default security attributes
+        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
         0,  // initial count
         1,  // maximum count
         NULL);          // unnamed semaphore
