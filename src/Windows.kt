@@ -82,7 +82,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                 "        FALSE,             // initially not owned\n" +
                 "        NULL);             // unnamed mutex" +
                 "\n" +
-                "    if (ghMutex == NULL) {\n" +
+                "    if (lock == NULL) {\n" +
                 "        printf(\"CreateMutex error: %d\\n\", GetLastError());\n" +
                 "        return 1;\n" +
                 "    }\n\n"
@@ -97,7 +97,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                             "        MAX_SEM_COUNT,  // maximum count\n" +
                             "        NULL);          // unnamed semaphore" +
                             "\n" +
-                            "    if (ghSemaphore == NULL) {\n" +
+                            "    if (semaphore_${it.name} == NULL) {\n" +
                             "        printf(\"CreateSemaphore error: %d\\n\", GetLastError());\n" +
                             "        return 1;\n" +
                             "    }\n\n"
@@ -116,7 +116,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                     "        0,          // default creation flags\n" +
                     "        &ThreadID); // receive thread identifier" +
                     "\n" +
-                    "    if( aThread[i] == NULL ) {\n" +
+                    "    if( aThread[$i] == NULL ) {\n" +
                     "        printf(\"CreateThread error: %d\\n\", GetLastError());\n" +
                     "        return 1;\n" +
                     "    }\n\n")

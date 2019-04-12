@@ -237,7 +237,7 @@ int lab3_init() {
         NULL,              // default security attributes
         FALSE,             // initially not owned
         NULL);             // unnamed mutex
-    if (ghMutex == NULL) {
+    if (lock == NULL) {
         printf("CreateMutex error: %d\n", GetLastError());
         return 1;
     }
@@ -247,7 +247,7 @@ int lab3_init() {
         0,  // initial count
         MAX_SEM_COUNT,  // maximum count
         NULL);          // unnamed semaphore
-    if (ghSemaphore == NULL) {
+    if (semaphore_a == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
         return 1;
     }
@@ -257,7 +257,7 @@ int lab3_init() {
         0,  // initial count
         MAX_SEM_COUNT,  // maximum count
         NULL);          // unnamed semaphore
-    if (ghSemaphore == NULL) {
+    if (semaphore_b == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
         return 1;
     }
@@ -267,7 +267,7 @@ int lab3_init() {
         0,  // initial count
         MAX_SEM_COUNT,  // maximum count
         NULL);          // unnamed semaphore
-    if (ghSemaphore == NULL) {
+    if (semaphore_c == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
         return 1;
     }
@@ -277,7 +277,7 @@ int lab3_init() {
         0,  // initial count
         MAX_SEM_COUNT,  // maximum count
         NULL);          // unnamed semaphore
-    if (ghSemaphore == NULL) {
+    if (semaphore_d == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
         return 1;
     }
@@ -287,7 +287,7 @@ int lab3_init() {
         0,  // initial count
         MAX_SEM_COUNT,  // maximum count
         NULL);          // unnamed semaphore
-    if (ghSemaphore == NULL) {
+    if (semaphore_e == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
         return 1;
     }
@@ -297,7 +297,7 @@ int lab3_init() {
         0,  // initial count
         MAX_SEM_COUNT,  // maximum count
         NULL);          // unnamed semaphore
-    if (ghSemaphore == NULL) {
+    if (semaphore_f == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
         return 1;
     }
@@ -307,7 +307,7 @@ int lab3_init() {
         0,  // initial count
         MAX_SEM_COUNT,  // maximum count
         NULL);          // unnamed semaphore
-    if (ghSemaphore == NULL) {
+    if (semaphore_g == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
         return 1;
     }
@@ -317,7 +317,7 @@ int lab3_init() {
         0,  // initial count
         MAX_SEM_COUNT,  // maximum count
         NULL);          // unnamed semaphore
-    if (ghSemaphore == NULL) {
+    if (semaphore_h == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
         return 1;
     }
@@ -327,7 +327,7 @@ int lab3_init() {
         0,  // initial count
         MAX_SEM_COUNT,  // maximum count
         NULL);          // unnamed semaphore
-    if (ghSemaphore == NULL) {
+    if (semaphore_i == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
         return 1;
     }
@@ -337,7 +337,7 @@ int lab3_init() {
         0,  // initial count
         MAX_SEM_COUNT,  // maximum count
         NULL);          // unnamed semaphore
-    if (ghSemaphore == NULL) {
+    if (semaphore_k == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
         return 1;
     }
@@ -347,7 +347,7 @@ int lab3_init() {
         0,  // initial count
         MAX_SEM_COUNT,  // maximum count
         NULL);          // unnamed semaphore
-    if (ghSemaphore == NULL) {
+    if (semaphore_m == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
         return 1;
     }
@@ -357,7 +357,7 @@ int lab3_init() {
         0,  // initial count
         MAX_SEM_COUNT,  // maximum count
         NULL);          // unnamed semaphore
-    if (ghSemaphore == NULL) {
+    if (semaphore_n == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
         return 1;
     }
@@ -370,7 +370,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[0] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -382,7 +382,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[1] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -394,7 +394,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[2] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -406,7 +406,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[3] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -418,7 +418,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[4] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -430,7 +430,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[5] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -442,7 +442,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[6] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -454,7 +454,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[7] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -466,7 +466,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[8] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -478,7 +478,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[9] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -490,7 +490,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[10] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -502,7 +502,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[11] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -514,7 +514,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[i] == NULL ) {
+    if( aThread[12] == NULL ) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
