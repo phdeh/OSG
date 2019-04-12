@@ -5,26 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Windows.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Windows.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/1/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/1/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/10/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/10/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/11/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/11/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/12/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/12/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/13/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/13/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/14/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/14/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/15/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/15/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/16/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/16/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/17/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/17/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/18/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/18/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/19/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/19/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/2/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/2/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/20/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/20/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/3/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/3/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/4/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/4/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/5/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/5/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/6/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/6/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/7/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/7/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/8/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/8/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/9/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/9/lab3.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,8 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Windows.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="64" column="51" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
+            <state relative-caret-position="520">
+              <caret line="68" column="67" selection-start-line="68" selection-start-column="67" selection-end-line="68" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -121,11 +101,13 @@
       <find>e</find>
       <find>++</find>
       <find>max_</find>
+      <find>0L</find>
     </findStrings>
     <replaceStrings>
       <replace>Semaphore${it.name.capitalze()}</replace>
       <replace>capitalize</replace>
       <replace>-=-1</replace>
+      <replace>INFINITE</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -258,7 +240,7 @@
       <updated>1554194079389</updated>
       <workItem from="1554357029136" duration="1328000" />
       <workItem from="1554757350225" duration="4865000" />
-      <workItem from="1555067677282" duration="6125000" />
+      <workItem from="1555067677282" duration="6364000" />
     </task>
     <task id="LOCAL-00001" summary="Windows test">
       <created>1555088496789</created>
@@ -337,11 +319,25 @@
       <option name="project" value="LOCAL" />
       <updated>1555089747089</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Test WaitForMultipleObjects">
+      <created>1555090186795</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1555090186795</updated>
+    </task>
+    <task id="LOCAL-00013" summary="SEMAPHORE_MODIFY_STATE | SYNCHRONIZE">
+      <created>1555090342288</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1555090342288</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14301000" />
+    <option name="totallyTimeSpent" value="14540000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -404,7 +400,9 @@
     <MESSAGE value="Initial count experiment" />
     <MESSAGE value="Print got semaphores" />
     <MESSAGE value="Initial semaphore is zero" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial semaphore is zero" />
+    <MESSAGE value="Test WaitForMultipleObjects" />
+    <MESSAGE value="SEMAPHORE_MODIFY_STATE | SYNCHRONIZE" />
+    <option name="LAST_COMMIT_MESSAGE" value="SEMAPHORE_MODIFY_STATE | SYNCHRONIZE" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/kotlin/collections/Collections.kt">
@@ -496,8 +494,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Windows.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="64" column="51" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
+        <state relative-caret-position="520">
+          <caret line="68" column="67" selection-start-line="68" selection-start-column="67" selection-end-line="68" selection-end-column="67" />
         </state>
       </provider>
     </entry>

@@ -49,7 +49,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
             )
             if (it.waitsFor.size <= 1)
                 it.waitsFor.sortedBy { i -> i.name }.forEach { i ->
-                    sb.append("    WaitForSingleObject(semaphore_${i.name}, 0L);\n")
+                    sb.append("    WaitForSingleObject(semaphore_${i.name}, INFINITE);\n")
                     sb.append("    std::cerr << \'${i.name.capitalize()}\' << std::flush;\n")
                 }
             else {
@@ -62,11 +62,11 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                         sb.append("\n")
                 }
                 sb.append("    };\n" +
-                        "    WaitForMultipleObjects(${it.waitsFor.size}, semaphores, TRUE, 0L);\n")
+                        "    WaitForMultipleObjects(${it.waitsFor.size}, semaphores, TRUE, INFINITE);\n")
             }
             sb.append(
                 "    for (int i = 0; i < ${it.iterations * 4}; i++) {\n" +
-                        "        WaitForSingleObject(lock, 0L);\n" +
+                        "        WaitForSingleObject(lock, INFINITE);\n" +
                         "        std::cout << \'${it.name}\' << std::flush;\n" +
                         "        ReleaseMutex(lock);\n" +
                         "        sleep_ms(SLEEP_TIME);\n" +
@@ -101,7 +101,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
             if (it.waitedBy > 0) {
                 sb.append(
                     "    semaphore_${it.name} = CreateSemaphore( \n" +
-                            "        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes\n" +
+                            "        NULL,           // default security attributes\n" +
                             "        0,  // initial count\n" +
                             "        ${it.waitedBy},  // maximum count\n" +
                             "        NULL);          // unnamed semaphore" +
