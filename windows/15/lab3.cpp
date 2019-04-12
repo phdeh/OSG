@@ -34,7 +34,7 @@ unsigned int lab2_task_number() {
 DWORD WINAPI thread_a(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     for (int i = 0; i < 4; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'a' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -44,10 +44,10 @@ DWORD WINAPI thread_a(LPVOID lpParam) {
 }
 DWORD WINAPI thread_b(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
-    WaitForSingleObject(semaphore_a, 0L);
+    WaitForSingleObject(semaphore_a, INFINITE);
     std::cerr << 'A' << std::flush;
     for (int i = 0; i < 4; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'b' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -57,10 +57,10 @@ DWORD WINAPI thread_b(LPVOID lpParam) {
 }
 DWORD WINAPI thread_c(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
-    WaitForSingleObject(semaphore_a, 0L);
+    WaitForSingleObject(semaphore_a, INFINITE);
     std::cerr << 'A' << std::flush;
     for (int i = 0; i < 4; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'c' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -71,7 +71,7 @@ DWORD WINAPI thread_c(LPVOID lpParam) {
 DWORD WINAPI thread_d(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     for (int i = 0; i < 12; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'd' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -87,9 +87,9 @@ DWORD WINAPI thread_e(LPVOID lpParam) {
         semaphore_c,
         semaphore_g
     };
-    WaitForMultipleObjects(4, semaphores, TRUE, 0L);
+    WaitForMultipleObjects(4, semaphores, TRUE, INFINITE);
     for (int i = 0; i < 8; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'e' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -105,9 +105,9 @@ DWORD WINAPI thread_f(LPVOID lpParam) {
         semaphore_c,
         semaphore_g
     };
-    WaitForMultipleObjects(4, semaphores, TRUE, 0L);
+    WaitForMultipleObjects(4, semaphores, TRUE, INFINITE);
     for (int i = 0; i < 4; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'f' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -117,10 +117,10 @@ DWORD WINAPI thread_f(LPVOID lpParam) {
 }
 DWORD WINAPI thread_g(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
-    WaitForSingleObject(semaphore_a, 0L);
+    WaitForSingleObject(semaphore_a, INFINITE);
     std::cerr << 'A' << std::flush;
     for (int i = 0; i < 4; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'g' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -130,10 +130,10 @@ DWORD WINAPI thread_g(LPVOID lpParam) {
 }
 DWORD WINAPI thread_h(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
-    WaitForSingleObject(semaphore_a, 0L);
+    WaitForSingleObject(semaphore_a, INFINITE);
     std::cerr << 'A' << std::flush;
     for (int i = 0; i < 8; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'h' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -149,9 +149,9 @@ DWORD WINAPI thread_i(LPVOID lpParam) {
         semaphore_c,
         semaphore_g
     };
-    WaitForMultipleObjects(4, semaphores, TRUE, 0L);
+    WaitForMultipleObjects(4, semaphores, TRUE, INFINITE);
     for (int i = 0; i < 4; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'i' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -167,9 +167,9 @@ DWORD WINAPI thread_k(LPVOID lpParam) {
         semaphore_c,
         semaphore_g
     };
-    WaitForMultipleObjects(4, semaphores, TRUE, 0L);
+    WaitForMultipleObjects(4, semaphores, TRUE, INFINITE);
     for (int i = 0; i < 4; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'k' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -190,9 +190,9 @@ DWORD WINAPI thread_m(LPVOID lpParam) {
         semaphore_i,
         semaphore_k
     };
-    WaitForMultipleObjects(9, semaphores, TRUE, 0L);
+    WaitForMultipleObjects(9, semaphores, TRUE, INFINITE);
     for (int i = 0; i < 4; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'm' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -213,9 +213,9 @@ DWORD WINAPI thread_n(LPVOID lpParam) {
         semaphore_i,
         semaphore_k
     };
-    WaitForMultipleObjects(9, semaphores, TRUE, 0L);
+    WaitForMultipleObjects(9, semaphores, TRUE, INFINITE);
     for (int i = 0; i < 8; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'n' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -237,9 +237,9 @@ DWORD WINAPI thread_p(LPVOID lpParam) {
         semaphore_k,
         semaphore_m
     };
-    WaitForMultipleObjects(11, semaphores, TRUE, 0L);
+    WaitForMultipleObjects(11, semaphores, TRUE, INFINITE);
     for (int i = 0; i < 4; i++) {
-        WaitForSingleObject(lock, 0L);
+        WaitForSingleObject(lock, INFINITE);
         std::cout << 'p' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
@@ -259,7 +259,7 @@ int lab3_init() {
     }
 
     semaphore_a = CreateSemaphore( 
-        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
+        NULL,           // default security attributes
         0,  // initial count
         11,  // maximum count
         NULL);          // unnamed semaphore
@@ -269,7 +269,7 @@ int lab3_init() {
     }
 
     semaphore_b = CreateSemaphore( 
-        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
+        NULL,           // default security attributes
         0,  // initial count
         7,  // maximum count
         NULL);          // unnamed semaphore
@@ -279,7 +279,7 @@ int lab3_init() {
     }
 
     semaphore_c = CreateSemaphore( 
-        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
+        NULL,           // default security attributes
         0,  // initial count
         7,  // maximum count
         NULL);          // unnamed semaphore
@@ -289,7 +289,7 @@ int lab3_init() {
     }
 
     semaphore_d = CreateSemaphore( 
-        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
+        NULL,           // default security attributes
         0,  // initial count
         3,  // maximum count
         NULL);          // unnamed semaphore
@@ -299,7 +299,7 @@ int lab3_init() {
     }
 
     semaphore_e = CreateSemaphore( 
-        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
+        NULL,           // default security attributes
         0,  // initial count
         1,  // maximum count
         NULL);          // unnamed semaphore
@@ -309,7 +309,7 @@ int lab3_init() {
     }
 
     semaphore_f = CreateSemaphore( 
-        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
+        NULL,           // default security attributes
         0,  // initial count
         3,  // maximum count
         NULL);          // unnamed semaphore
@@ -319,7 +319,7 @@ int lab3_init() {
     }
 
     semaphore_g = CreateSemaphore( 
-        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
+        NULL,           // default security attributes
         0,  // initial count
         7,  // maximum count
         NULL);          // unnamed semaphore
@@ -329,7 +329,7 @@ int lab3_init() {
     }
 
     semaphore_h = CreateSemaphore( 
-        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
+        NULL,           // default security attributes
         0,  // initial count
         3,  // maximum count
         NULL);          // unnamed semaphore
@@ -339,7 +339,7 @@ int lab3_init() {
     }
 
     semaphore_i = CreateSemaphore( 
-        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
+        NULL,           // default security attributes
         0,  // initial count
         3,  // maximum count
         NULL);          // unnamed semaphore
@@ -349,7 +349,7 @@ int lab3_init() {
     }
 
     semaphore_k = CreateSemaphore( 
-        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
+        NULL,           // default security attributes
         0,  // initial count
         3,  // maximum count
         NULL);          // unnamed semaphore
@@ -359,7 +359,7 @@ int lab3_init() {
     }
 
     semaphore_m = CreateSemaphore( 
-        SEMAPHORE_MODIFY_STATE | SYNCHRONIZE,           // default security attributes
+        NULL,           // default security attributes
         0,  // initial count
         1,  // maximum count
         NULL);          // unnamed semaphore
