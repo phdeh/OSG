@@ -2,49 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f986218-4502-44e0-a27c-7d7419a8e42b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/WindowsDeprecated.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/OSGKt$join$$inlined$sortBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/OSGKt$join$$inlined$sortBy$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/OSGKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/OSGKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/ThreadTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/ThreadTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/UnixKt$$special$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/UnixKt$$special$$inlined$sortedBy$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/UnixKt$toUnixCode$$inlined$sortedBy$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/UnixKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/UnixKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$$special$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$$special$$inlined$sortedBy$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSG/META-INF/OSG.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/META-INF/OSG.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Windows.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Windows.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/1/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/1/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/10/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/10/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/11/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/11/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/12/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/12/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/13/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/13/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/14/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/14/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/15/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/15/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/16/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/16/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/17/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/17/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/18/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/18/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/19/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/19/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/2/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/2/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/20/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/20/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/3/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/3/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/4/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/4/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/5/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/5/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/6/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/6/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/7/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/7/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/8/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/8/lab3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/9/lab3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/windows/9/lab3.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/windows/4/lab3.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="32" column="21" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="21" />
+            <state relative-caret-position="420">
+              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -112,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Windows.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="110" column="38" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
+            <state relative-caret-position="45">
+              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -281,12 +240,20 @@
       <updated>1554194079389</updated>
       <workItem from="1554357029136" duration="1328000" />
       <workItem from="1554757350225" duration="4865000" />
-      <workItem from="1555067677282" duration="4392000" />
+      <workItem from="1555067677282" duration="4506000" />
     </task>
+    <task id="LOCAL-00001" summary="Windows test">
+      <created>1555088496789</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555088496789</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12568000" />
+    <option name="totallyTimeSpent" value="12682000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -339,6 +306,10 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.cpp" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Windows test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Windows test" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/kotlin/collections/Collections.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -386,24 +357,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unix/4/lab2.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/windows/4/run.bat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/windows/4/lab3.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="32" column="21" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -424,10 +381,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/windows/4/lab3.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unix/4/lab2.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Windows.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="110" column="38" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
+        <state relative-caret-position="45">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
         </state>
       </provider>
     </entry>

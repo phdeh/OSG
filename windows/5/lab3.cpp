@@ -1,4 +1,4 @@
-#include "lab2.h"
+#include "lab3.h"
 
 #include <windows.h>
 #include <iostream>
