@@ -40,7 +40,7 @@ DWORD WINAPI thread_a(LPVOID lpParam) {
     }
     for (int i = 0; i < 7; i++)
         ReleaseSemaphore(semaphore_a, 1, NULL);
-    return ptr;
+    return TRUE;
 }
 DWORD WINAPI thread_b(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
@@ -53,7 +53,7 @@ DWORD WINAPI thread_b(LPVOID lpParam) {
     }
     for (int i = 0; i < 6; i++)
         ReleaseSemaphore(semaphore_b, 1, NULL);
-    return ptr;
+    return TRUE;
 }
 DWORD WINAPI thread_c(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
@@ -65,7 +65,7 @@ DWORD WINAPI thread_c(LPVOID lpParam) {
     }
     for (int i = 0; i < 6; i++)
         ReleaseSemaphore(semaphore_c, 1, NULL);
-    return ptr;
+    return TRUE;
 }
 DWORD WINAPI thread_d(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
@@ -77,7 +77,7 @@ DWORD WINAPI thread_d(LPVOID lpParam) {
     }
     for (int i = 0; i < 2; i++)
         ReleaseSemaphore(semaphore_d, 1, NULL);
-    return ptr;
+    return TRUE;
 }
 DWORD WINAPI thread_e(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
@@ -89,7 +89,7 @@ DWORD WINAPI thread_e(LPVOID lpParam) {
     }
     for (int i = 0; i < 4; i++)
         ReleaseSemaphore(semaphore_e, 1, NULL);
-    return ptr;
+    return TRUE;
 }
 DWORD WINAPI thread_f(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
@@ -104,7 +104,7 @@ DWORD WINAPI thread_f(LPVOID lpParam) {
     }
     for (int i = 0; i < 4; i++)
         ReleaseSemaphore(semaphore_f, 1, NULL);
-    return ptr;
+    return TRUE;
 }
 DWORD WINAPI thread_g(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
@@ -119,7 +119,7 @@ DWORD WINAPI thread_g(LPVOID lpParam) {
     }
     for (int i = 0; i < 2; i++)
         ReleaseSemaphore(semaphore_g, 1, NULL);
-    return ptr;
+    return TRUE;
 }
 DWORD WINAPI thread_h(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
@@ -136,7 +136,7 @@ DWORD WINAPI thread_h(LPVOID lpParam) {
     }
     for (int i = 0; i < 2; i++)
         ReleaseSemaphore(semaphore_h, 1, NULL);
-    return ptr;
+    return TRUE;
 }
 DWORD WINAPI thread_i(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
@@ -151,8 +151,8 @@ DWORD WINAPI thread_i(LPVOID lpParam) {
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
     }
-    ReleaseSemaphore(semaphore_i);
-    return ptr;
+    ReleaseSemaphore(semaphore_i, 1, NULL);
+    return TRUE;
 }
 DWORD WINAPI thread_k(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
@@ -170,8 +170,8 @@ DWORD WINAPI thread_k(LPVOID lpParam) {
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
     }
-    ReleaseSemaphore(semaphore_k);
-    return ptr;
+    ReleaseSemaphore(semaphore_k, 1, NULL);
+    return TRUE;
 }
 DWORD WINAPI thread_m(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
@@ -191,7 +191,7 @@ DWORD WINAPI thread_m(LPVOID lpParam) {
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
     }
-    return ptr;
+    return TRUE;
 }
 int lab3_init() {
     DWORD ThreadID;
@@ -208,7 +208,7 @@ int lab3_init() {
     semaphore_a = CreateSemaphore( 
         NULL,           // default security attributes
         0,  // initial count
-        MAX_SEM_COUNT,  // maximum count
+        7,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_a == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -218,7 +218,7 @@ int lab3_init() {
     semaphore_b = CreateSemaphore( 
         NULL,           // default security attributes
         0,  // initial count
-        MAX_SEM_COUNT,  // maximum count
+        6,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_b == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -228,7 +228,7 @@ int lab3_init() {
     semaphore_c = CreateSemaphore( 
         NULL,           // default security attributes
         0,  // initial count
-        MAX_SEM_COUNT,  // maximum count
+        6,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_c == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -238,7 +238,7 @@ int lab3_init() {
     semaphore_d = CreateSemaphore( 
         NULL,           // default security attributes
         0,  // initial count
-        MAX_SEM_COUNT,  // maximum count
+        2,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_d == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -248,7 +248,7 @@ int lab3_init() {
     semaphore_e = CreateSemaphore( 
         NULL,           // default security attributes
         0,  // initial count
-        MAX_SEM_COUNT,  // maximum count
+        4,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_e == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -258,7 +258,7 @@ int lab3_init() {
     semaphore_f = CreateSemaphore( 
         NULL,           // default security attributes
         0,  // initial count
-        MAX_SEM_COUNT,  // maximum count
+        4,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_f == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -268,7 +268,7 @@ int lab3_init() {
     semaphore_g = CreateSemaphore( 
         NULL,           // default security attributes
         0,  // initial count
-        MAX_SEM_COUNT,  // maximum count
+        2,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_g == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -278,7 +278,7 @@ int lab3_init() {
     semaphore_h = CreateSemaphore( 
         NULL,           // default security attributes
         0,  // initial count
-        MAX_SEM_COUNT,  // maximum count
+        2,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_h == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -288,7 +288,7 @@ int lab3_init() {
     semaphore_i = CreateSemaphore( 
         NULL,           // default security attributes
         0,  // initial count
-        MAX_SEM_COUNT,  // maximum count
+        1,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_i == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -298,7 +298,7 @@ int lab3_init() {
     semaphore_k = CreateSemaphore( 
         NULL,           // default security attributes
         0,  // initial count
-        MAX_SEM_COUNT,  // maximum count
+        1,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_k == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -313,7 +313,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[0] == NULL ) {
+    if(aThread[0] == NULL) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -325,7 +325,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[1] == NULL ) {
+    if(aThread[1] == NULL) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -337,7 +337,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[2] == NULL ) {
+    if(aThread[2] == NULL) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -349,7 +349,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[3] == NULL ) {
+    if(aThread[3] == NULL) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -361,7 +361,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[4] == NULL ) {
+    if(aThread[4] == NULL) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -373,7 +373,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[5] == NULL ) {
+    if(aThread[5] == NULL) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -385,7 +385,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[6] == NULL ) {
+    if(aThread[6] == NULL) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -397,7 +397,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[7] == NULL ) {
+    if(aThread[7] == NULL) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -409,7 +409,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[8] == NULL ) {
+    if(aThread[8] == NULL) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -421,7 +421,7 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[9] == NULL ) {
+    if(aThread[9] == NULL) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
@@ -433,14 +433,14 @@ int lab3_init() {
         NULL,       // no thread function arguments
         0,          // default creation flags
         &ThreadID); // receive thread identifier
-    if( aThread[10] == NULL ) {
+    if(aThread[10] == NULL) {
         printf("CreateThread error: %d\n", GetLastError());
         return 1;
     }
 
-    WaitForMultipleObjects(THREADCOUNT, aThread, TRUE, INFINITE);
+    WaitForMultipleObjects(11, aThread, TRUE, INFINITE);
     CloseHandle(lock);
-    for( i=0; i < 11; i++ )
+    for(int i = 0; i < 11; i++)
         CloseHandle(aThread[i]);
     CloseHandle(semaphore_a);
     CloseHandle(semaphore_b);
