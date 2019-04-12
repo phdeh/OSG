@@ -189,7 +189,7 @@ int lab3_init() {
 
     semaphore_a = CreateSemaphore( 
         NULL,           // default security attributes
-        0,  // initial count
+        7,  // initial count
         7,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_a == NULL) {
@@ -199,7 +199,7 @@ int lab3_init() {
 
     semaphore_b = CreateSemaphore( 
         NULL,           // default security attributes
-        0,  // initial count
+        6,  // initial count
         6,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_b == NULL) {
@@ -209,7 +209,7 @@ int lab3_init() {
 
     semaphore_c = CreateSemaphore( 
         NULL,           // default security attributes
-        0,  // initial count
+        5,  // initial count
         5,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_c == NULL) {
@@ -219,7 +219,7 @@ int lab3_init() {
 
     semaphore_d = CreateSemaphore( 
         NULL,           // default security attributes
-        0,  // initial count
+        6,  // initial count
         6,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_d == NULL) {
@@ -229,7 +229,7 @@ int lab3_init() {
 
     semaphore_e = CreateSemaphore( 
         NULL,           // default security attributes
-        0,  // initial count
+        5,  // initial count
         5,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_e == NULL) {
@@ -239,7 +239,7 @@ int lab3_init() {
 
     semaphore_f = CreateSemaphore( 
         NULL,           // default security attributes
-        0,  // initial count
+        2,  // initial count
         2,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_f == NULL) {
@@ -249,7 +249,7 @@ int lab3_init() {
 
     semaphore_g = CreateSemaphore( 
         NULL,           // default security attributes
-        0,  // initial count
+        1,  // initial count
         1,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_g == NULL) {
@@ -259,7 +259,7 @@ int lab3_init() {
 
     semaphore_h = CreateSemaphore( 
         NULL,           // default security attributes
-        0,  // initial count
+        1,  // initial count
         1,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_h == NULL) {
