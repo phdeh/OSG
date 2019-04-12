@@ -1,7 +1,7 @@
 fun List<ThreadTask>.toWindowsCode(variant: Int): String {
     val sb = StringBuilder()
     sb.append(
-        "#include \"lab2.h\"\n" +
+        "#include \"lab3.h\"\n" +
                 "\n" +
                 "#include <windows.h>\n" +
                 "#include <iostream>\n" +
