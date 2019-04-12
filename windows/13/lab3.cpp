@@ -46,6 +46,7 @@ DWORD WINAPI thread_a(LPVOID lpParam) {
 DWORD WINAPI thread_b(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     WaitForSingleObject(semaphore_a, 0L);
+    std::cerr << 'A' << std::flush;
     for (int i = 0; i < 4; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'b' << std::flush;
@@ -59,6 +60,7 @@ DWORD WINAPI thread_b(LPVOID lpParam) {
 DWORD WINAPI thread_c(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     WaitForSingleObject(semaphore_a, 0L);
+    std::cerr << 'A' << std::flush;
     for (int i = 0; i < 8; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'c' << std::flush;
@@ -72,7 +74,9 @@ DWORD WINAPI thread_c(LPVOID lpParam) {
 DWORD WINAPI thread_d(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     WaitForSingleObject(semaphore_a, 0L);
+    std::cerr << 'A' << std::flush;
     WaitForSingleObject(semaphore_b, 0L);
+    std::cerr << 'B' << std::flush;
     for (int i = 0; i < 8; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'd' << std::flush;
@@ -86,7 +90,9 @@ DWORD WINAPI thread_d(LPVOID lpParam) {
 DWORD WINAPI thread_e(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     WaitForSingleObject(semaphore_a, 0L);
+    std::cerr << 'A' << std::flush;
     WaitForSingleObject(semaphore_b, 0L);
+    std::cerr << 'B' << std::flush;
     for (int i = 0; i < 4; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'e' << std::flush;
@@ -100,7 +106,9 @@ DWORD WINAPI thread_e(LPVOID lpParam) {
 DWORD WINAPI thread_f(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     WaitForSingleObject(semaphore_a, 0L);
+    std::cerr << 'A' << std::flush;
     WaitForSingleObject(semaphore_b, 0L);
+    std::cerr << 'B' << std::flush;
     for (int i = 0; i < 4; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'f' << std::flush;
@@ -114,10 +122,15 @@ DWORD WINAPI thread_f(LPVOID lpParam) {
 DWORD WINAPI thread_g(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     WaitForSingleObject(semaphore_a, 0L);
+    std::cerr << 'A' << std::flush;
     WaitForSingleObject(semaphore_b, 0L);
+    std::cerr << 'B' << std::flush;
     WaitForSingleObject(semaphore_c, 0L);
+    std::cerr << 'C' << std::flush;
     WaitForSingleObject(semaphore_e, 0L);
+    std::cerr << 'E' << std::flush;
     WaitForSingleObject(semaphore_f, 0L);
+    std::cerr << 'F' << std::flush;
     for (int i = 0; i < 4; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'g' << std::flush;
@@ -131,10 +144,15 @@ DWORD WINAPI thread_g(LPVOID lpParam) {
 DWORD WINAPI thread_h(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     WaitForSingleObject(semaphore_a, 0L);
+    std::cerr << 'A' << std::flush;
     WaitForSingleObject(semaphore_b, 0L);
+    std::cerr << 'B' << std::flush;
     WaitForSingleObject(semaphore_c, 0L);
+    std::cerr << 'C' << std::flush;
     WaitForSingleObject(semaphore_e, 0L);
+    std::cerr << 'E' << std::flush;
     WaitForSingleObject(semaphore_f, 0L);
+    std::cerr << 'F' << std::flush;
     for (int i = 0; i < 8; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'h' << std::flush;
@@ -147,13 +165,21 @@ DWORD WINAPI thread_h(LPVOID lpParam) {
 DWORD WINAPI thread_i(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     WaitForSingleObject(semaphore_a, 0L);
+    std::cerr << 'A' << std::flush;
     WaitForSingleObject(semaphore_b, 0L);
+    std::cerr << 'B' << std::flush;
     WaitForSingleObject(semaphore_c, 0L);
+    std::cerr << 'C' << std::flush;
     WaitForSingleObject(semaphore_d, 0L);
+    std::cerr << 'D' << std::flush;
     WaitForSingleObject(semaphore_e, 0L);
+    std::cerr << 'E' << std::flush;
     WaitForSingleObject(semaphore_f, 0L);
+    std::cerr << 'F' << std::flush;
     WaitForSingleObject(semaphore_g, 0L);
+    std::cerr << 'G' << std::flush;
     WaitForSingleObject(semaphore_k, 0L);
+    std::cerr << 'K' << std::flush;
     for (int i = 0; i < 4; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'i' << std::flush;
@@ -166,10 +192,15 @@ DWORD WINAPI thread_i(LPVOID lpParam) {
 DWORD WINAPI thread_k(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     WaitForSingleObject(semaphore_a, 0L);
+    std::cerr << 'A' << std::flush;
     WaitForSingleObject(semaphore_b, 0L);
+    std::cerr << 'B' << std::flush;
     WaitForSingleObject(semaphore_c, 0L);
+    std::cerr << 'C' << std::flush;
     WaitForSingleObject(semaphore_e, 0L);
+    std::cerr << 'E' << std::flush;
     WaitForSingleObject(semaphore_f, 0L);
+    std::cerr << 'F' << std::flush;
     for (int i = 0; i < 4; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'k' << std::flush;
@@ -183,10 +214,15 @@ DWORD WINAPI thread_k(LPVOID lpParam) {
 DWORD WINAPI thread_m(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     WaitForSingleObject(semaphore_a, 0L);
+    std::cerr << 'A' << std::flush;
     WaitForSingleObject(semaphore_b, 0L);
+    std::cerr << 'B' << std::flush;
     WaitForSingleObject(semaphore_c, 0L);
+    std::cerr << 'C' << std::flush;
     WaitForSingleObject(semaphore_e, 0L);
+    std::cerr << 'E' << std::flush;
     WaitForSingleObject(semaphore_f, 0L);
+    std::cerr << 'F' << std::flush;
     for (int i = 0; i < 8; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'm' << std::flush;
@@ -199,16 +235,27 @@ DWORD WINAPI thread_m(LPVOID lpParam) {
 DWORD WINAPI thread_n(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     WaitForSingleObject(semaphore_a, 0L);
+    std::cerr << 'A' << std::flush;
     WaitForSingleObject(semaphore_b, 0L);
+    std::cerr << 'B' << std::flush;
     WaitForSingleObject(semaphore_c, 0L);
+    std::cerr << 'C' << std::flush;
     WaitForSingleObject(semaphore_d, 0L);
+    std::cerr << 'D' << std::flush;
     WaitForSingleObject(semaphore_e, 0L);
+    std::cerr << 'E' << std::flush;
     WaitForSingleObject(semaphore_f, 0L);
+    std::cerr << 'F' << std::flush;
     WaitForSingleObject(semaphore_g, 0L);
+    std::cerr << 'G' << std::flush;
     WaitForSingleObject(semaphore_h, 0L);
+    std::cerr << 'H' << std::flush;
     WaitForSingleObject(semaphore_i, 0L);
+    std::cerr << 'I' << std::flush;
     WaitForSingleObject(semaphore_k, 0L);
+    std::cerr << 'K' << std::flush;
     WaitForSingleObject(semaphore_m, 0L);
+    std::cerr << 'M' << std::flush;
     for (int i = 0; i < 4; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'n' << std::flush;
@@ -231,8 +278,8 @@ int lab3_init() {
 
     semaphore_a = CreateSemaphore( 
         NULL,           // default security attributes
-        11,  // initial count
-        11,  // maximum count
+        0,  // initial count
+        12,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_a == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -241,8 +288,8 @@ int lab3_init() {
 
     semaphore_b = CreateSemaphore( 
         NULL,           // default security attributes
-        9,  // initial count
-        9,  // maximum count
+        0,  // initial count
+        10,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_b == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -251,8 +298,8 @@ int lab3_init() {
 
     semaphore_c = CreateSemaphore( 
         NULL,           // default security attributes
-        6,  // initial count
-        6,  // maximum count
+        0,  // initial count
+        7,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_c == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -261,8 +308,8 @@ int lab3_init() {
 
     semaphore_d = CreateSemaphore( 
         NULL,           // default security attributes
-        2,  // initial count
-        2,  // maximum count
+        0,  // initial count
+        3,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_d == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -271,8 +318,8 @@ int lab3_init() {
 
     semaphore_e = CreateSemaphore( 
         NULL,           // default security attributes
-        6,  // initial count
-        6,  // maximum count
+        0,  // initial count
+        7,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_e == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -281,8 +328,8 @@ int lab3_init() {
 
     semaphore_f = CreateSemaphore( 
         NULL,           // default security attributes
-        6,  // initial count
-        6,  // maximum count
+        0,  // initial count
+        7,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_f == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -291,8 +338,8 @@ int lab3_init() {
 
     semaphore_g = CreateSemaphore( 
         NULL,           // default security attributes
-        2,  // initial count
-        2,  // maximum count
+        0,  // initial count
+        3,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_g == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -301,8 +348,8 @@ int lab3_init() {
 
     semaphore_h = CreateSemaphore( 
         NULL,           // default security attributes
-        1,  // initial count
-        1,  // maximum count
+        0,  // initial count
+        2,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_h == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -311,8 +358,8 @@ int lab3_init() {
 
     semaphore_i = CreateSemaphore( 
         NULL,           // default security attributes
-        1,  // initial count
-        1,  // maximum count
+        0,  // initial count
+        2,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_i == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -321,8 +368,8 @@ int lab3_init() {
 
     semaphore_k = CreateSemaphore( 
         NULL,           // default security attributes
-        2,  // initial count
-        2,  // maximum count
+        0,  // initial count
+        3,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_k == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());
@@ -331,8 +378,8 @@ int lab3_init() {
 
     semaphore_m = CreateSemaphore( 
         NULL,           // default security attributes
-        1,  // initial count
-        1,  // maximum count
+        0,  // initial count
+        2,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_m == NULL) {
         printf("CreateSemaphore error: %d\n", GetLastError());

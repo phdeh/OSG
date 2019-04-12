@@ -76,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Windows.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
+            <state relative-caret-position="93">
+              <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -255,7 +255,7 @@
       <updated>1554194079389</updated>
       <workItem from="1554357029136" duration="1328000" />
       <workItem from="1554757350225" duration="4865000" />
-      <workItem from="1555067677282" duration="5434000" />
+      <workItem from="1555067677282" duration="5468000" />
     </task>
     <task id="LOCAL-00001" summary="Windows test">
       <created>1555088496789</created>
@@ -306,11 +306,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555089224145</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Print got semaphores">
+      <created>1555089498985</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1555089498985</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13610000" />
+    <option name="totallyTimeSpent" value="13644000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -371,7 +378,8 @@
     <MESSAGE value="Ptr fix" />
     <MESSAGE value="Generated" />
     <MESSAGE value="Initial count experiment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial count experiment" />
+    <MESSAGE value="Print got semaphores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Print got semaphores" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/kotlin/collections/Collections.kt">
@@ -463,8 +471,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Windows.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
+        <state relative-caret-position="93">
+          <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
         </state>
       </provider>
     </entry>
