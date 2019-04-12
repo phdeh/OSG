@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0f986218-4502-44e0-a27c-7d7419a8e42b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$$special$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$$special$$inlined$sortedBy$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt$toWindowsCode$$inlined$sortedBy$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OSG/WindowsKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/WindowsKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Windows.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Windows.kt" afterDir="false" />
     </list>
@@ -24,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OSG.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1943">
+            <state relative-caret-position="375">
               <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding>
                 <element signature="e#0#65#0" expanded="true" />
@@ -41,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/windows/4/lab3.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="451" column="26" selection-start-line="451" selection-start-column="4" selection-end-line="451" selection-end-column="26" />
+            <state relative-caret-position="39">
+              <caret line="314" column="37" lean-forward="true" selection-start-line="314" selection-start-column="37" selection-end-line="314" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -50,7 +53,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/unix/4/lab2.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-407">
+            <state relative-caret-position="-3946">
               <caret line="8" column="8" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="8" />
             </state>
           </provider>
@@ -59,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Windows.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="68" column="67" selection-start-line="68" selection-start-column="67" selection-end-line="68" selection-end-column="67" />
+            <state relative-caret-position="202">
+              <caret line="116" column="28" selection-start-line="116" selection-start-column="28" selection-end-line="116" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -100,13 +103,17 @@
       <find>ptr</find>
       <find>e</find>
       <find>++</find>
-      <find>max_</find>
       <find>0L</find>
+      <find>max_</find>
+      <find>capital</find>
+      <find>std::cerr</find>
+      <find>printf</find>
     </findStrings>
     <replaceStrings>
       <replace>Semaphore${it.name.capitalze()}</replace>
       <replace>capitalize</replace>
       <replace>-=-1</replace>
+      <replace>std::cerr &lt;&lt;</replace>
       <replace>INFINITE</replace>
     </replaceStrings>
   </component>
@@ -123,9 +130,9 @@
         <option value="$PROJECT_DIR$/src/Unix.kt" />
         <option value="$PROJECT_DIR$/../OSGWin/os-task3-phdeh/examples/semaphore.c" />
         <option value="$PROJECT_DIR$/windows/4/run.bat" />
-        <option value="$PROJECT_DIR$/windows/4/lab3.cpp" />
         <option value="$PROJECT_DIR$/src/WindowsDeprecated.kt" />
         <option value="$PROJECT_DIR$/src/OSG.kt" />
+        <option value="$PROJECT_DIR$/windows/4/lab3.cpp" />
         <option value="$PROJECT_DIR$/src/Windows.kt" />
       </list>
     </option>
@@ -240,7 +247,7 @@
       <updated>1554194079389</updated>
       <workItem from="1554357029136" duration="1328000" />
       <workItem from="1554757350225" duration="4865000" />
-      <workItem from="1555067677282" duration="6364000" />
+      <workItem from="1555067677282" duration="8024000" />
     </task>
     <task id="LOCAL-00001" summary="Windows test">
       <created>1555088496789</created>
@@ -333,11 +340,32 @@
       <option name="project" value="LOCAL" />
       <updated>1555090342288</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="INFINITE">
+      <created>1555090419818</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1555090419818</updated>
+    </task>
+    <task id="LOCAL-00015" summary="INFINITE">
+      <created>1555090426953</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1555090426953</updated>
+    </task>
+    <task id="LOCAL-00016" summary="printf =&gt; cerr">
+      <created>1555095406708</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1555095406708</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14540000" />
+    <option name="totallyTimeSpent" value="16200000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -402,7 +430,9 @@
     <MESSAGE value="Initial semaphore is zero" />
     <MESSAGE value="Test WaitForMultipleObjects" />
     <MESSAGE value="SEMAPHORE_MODIFY_STATE | SYNCHRONIZE" />
-    <option name="LAST_COMMIT_MESSAGE" value="SEMAPHORE_MODIFY_STATE | SYNCHRONIZE" />
+    <MESSAGE value="INFINITE" />
+    <MESSAGE value="printf =&gt; cerr" />
+    <option name="LAST_COMMIT_MESSAGE" value="printf =&gt; cerr" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/kotlin/collections/Collections.kt">
@@ -458,9 +488,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Unix.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unix/4/lab2.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3946">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/OSG.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1943">
+        <state relative-caret-position="375">
           <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
@@ -473,29 +517,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/windows/4/lab3.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="451" column="26" selection-start-line="451" selection-start-column="4" selection-end-line="451" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Unix.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unix/4/lab2.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-407">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="8" />
+        <state relative-caret-position="39">
+          <caret line="314" column="37" lean-forward="true" selection-start-line="314" selection-start-column="37" selection-end-line="314" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Windows.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="68" column="67" selection-start-line="68" selection-start-column="67" selection-end-line="68" selection-end-column="67" />
+        <state relative-caret-position="202">
+          <caret line="116" column="28" selection-start-line="116" selection-start-column="28" selection-end-line="116" selection-end-column="28" />
         </state>
       </provider>
     </entry>

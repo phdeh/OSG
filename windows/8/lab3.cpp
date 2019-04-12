@@ -235,7 +235,6 @@ int lab3_init() {
         return 1;
     }
 
-    int err;
     aThread[0] = CreateThread( 
         NULL,       // default security attributes
         0,          // default stack size

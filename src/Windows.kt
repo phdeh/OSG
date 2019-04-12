@@ -115,7 +115,6 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
         }
     }
     if (this.isNotEmpty()) {
-        sb.append("    int err;\n")
         this.sortedBy { it.name }.forEachIndexed { i, it ->
             sb.append(
                 "    aThread[$i] = CreateThread( \n" +
