@@ -38,8 +38,7 @@ DWORD WINAPI thread_a(LPVOID lpParam) {
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
     }
-    for (int i = 0; i < 7; i++)
-        ReleaseSemaphore(semaphore_a, 1, NULL);
+    ReleaseSemaphore(semaphore_a, 7, NULL);
     return TRUE;
 }
 DWORD WINAPI thread_b(LPVOID lpParam) {
@@ -52,8 +51,7 @@ DWORD WINAPI thread_b(LPVOID lpParam) {
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
     }
-    for (int i = 0; i < 6; i++)
-        ReleaseSemaphore(semaphore_b, 1, NULL);
+    ReleaseSemaphore(semaphore_b, 6, NULL);
     return TRUE;
 }
 DWORD WINAPI thread_c(LPVOID lpParam) {
@@ -64,8 +62,7 @@ DWORD WINAPI thread_c(LPVOID lpParam) {
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
     }
-    for (int i = 0; i < 6; i++)
-        ReleaseSemaphore(semaphore_c, 1, NULL);
+    ReleaseSemaphore(semaphore_c, 6, NULL);
     return TRUE;
 }
 DWORD WINAPI thread_d(LPVOID lpParam) {
@@ -76,8 +73,7 @@ DWORD WINAPI thread_d(LPVOID lpParam) {
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
     }
-    for (int i = 0; i < 4; i++)
-        ReleaseSemaphore(semaphore_d, 1, NULL);
+    ReleaseSemaphore(semaphore_d, 4, NULL);
     return TRUE;
 }
 DWORD WINAPI thread_e(LPVOID lpParam) {
@@ -88,56 +84,52 @@ DWORD WINAPI thread_e(LPVOID lpParam) {
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
     }
-    for (int i = 0; i < 3; i++)
-        ReleaseSemaphore(semaphore_e, 1, NULL);
+    ReleaseSemaphore(semaphore_e, 3, NULL);
     return TRUE;
 }
 DWORD WINAPI thread_f(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
-    WaitForSingleObject(semaphore_a, 0L);
-    std::cerr << 'A' << std::flush;
-    WaitForSingleObject(semaphore_b, 0L);
-    std::cerr << 'B' << std::flush;
-    WaitForSingleObject(semaphore_c, 0L);
-    std::cerr << 'C' << std::flush;
-    WaitForSingleObject(semaphore_d, 0L);
-    std::cerr << 'D' << std::flush;
+    HANDLE semaphores[4] = {
+        semaphore_a,
+        semaphore_b,
+        semaphore_c,
+        semaphore_d
+    };
+    WaitForMultipleObjects(4, semaphores, TRUE, 0L);
     for (int i = 0; i < 4; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'f' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
     }
-    for (int i = 0; i < 3; i++)
-        ReleaseSemaphore(semaphore_f, 1, NULL);
+    ReleaseSemaphore(semaphore_f, 3, NULL);
     return TRUE;
 }
 DWORD WINAPI thread_g(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
-    WaitForSingleObject(semaphore_a, 0L);
-    std::cerr << 'A' << std::flush;
-    WaitForSingleObject(semaphore_b, 0L);
-    std::cerr << 'B' << std::flush;
-    WaitForSingleObject(semaphore_c, 0L);
-    std::cerr << 'C' << std::flush;
+    HANDLE semaphores[3] = {
+        semaphore_a,
+        semaphore_b,
+        semaphore_c
+    };
+    WaitForMultipleObjects(3, semaphores, TRUE, 0L);
     for (int i = 0; i < 8; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'g' << std::flush;
         ReleaseMutex(lock);
         sleep_ms(SLEEP_TIME);
     }
-    for (int i = 0; i < 3; i++)
-        ReleaseSemaphore(semaphore_g, 1, NULL);
+    ReleaseSemaphore(semaphore_g, 3, NULL);
     return TRUE;
 }
 DWORD WINAPI thread_h(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
-    WaitForSingleObject(semaphore_a, 0L);
-    std::cerr << 'A' << std::flush;
-    WaitForSingleObject(semaphore_b, 0L);
-    std::cerr << 'B' << std::flush;
-    WaitForSingleObject(semaphore_c, 0L);
-    std::cerr << 'C' << std::flush;
+    HANDLE semaphores[3] = {
+        semaphore_a,
+        semaphore_b,
+        semaphore_c
+    };
+    WaitForMultipleObjects(3, semaphores, TRUE, 0L);
     for (int i = 0; i < 12; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'h' << std::flush;
@@ -149,20 +141,16 @@ DWORD WINAPI thread_h(LPVOID lpParam) {
 }
 DWORD WINAPI thread_i(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
-    WaitForSingleObject(semaphore_a, 0L);
-    std::cerr << 'A' << std::flush;
-    WaitForSingleObject(semaphore_b, 0L);
-    std::cerr << 'B' << std::flush;
-    WaitForSingleObject(semaphore_c, 0L);
-    std::cerr << 'C' << std::flush;
-    WaitForSingleObject(semaphore_d, 0L);
-    std::cerr << 'D' << std::flush;
-    WaitForSingleObject(semaphore_e, 0L);
-    std::cerr << 'E' << std::flush;
-    WaitForSingleObject(semaphore_f, 0L);
-    std::cerr << 'F' << std::flush;
-    WaitForSingleObject(semaphore_g, 0L);
-    std::cerr << 'G' << std::flush;
+    HANDLE semaphores[7] = {
+        semaphore_a,
+        semaphore_b,
+        semaphore_c,
+        semaphore_d,
+        semaphore_e,
+        semaphore_f,
+        semaphore_g
+    };
+    WaitForMultipleObjects(7, semaphores, TRUE, 0L);
     for (int i = 0; i < 4; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'i' << std::flush;
@@ -174,20 +162,16 @@ DWORD WINAPI thread_i(LPVOID lpParam) {
 }
 DWORD WINAPI thread_k(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
-    WaitForSingleObject(semaphore_a, 0L);
-    std::cerr << 'A' << std::flush;
-    WaitForSingleObject(semaphore_b, 0L);
-    std::cerr << 'B' << std::flush;
-    WaitForSingleObject(semaphore_c, 0L);
-    std::cerr << 'C' << std::flush;
-    WaitForSingleObject(semaphore_d, 0L);
-    std::cerr << 'D' << std::flush;
-    WaitForSingleObject(semaphore_e, 0L);
-    std::cerr << 'E' << std::flush;
-    WaitForSingleObject(semaphore_f, 0L);
-    std::cerr << 'F' << std::flush;
-    WaitForSingleObject(semaphore_g, 0L);
-    std::cerr << 'G' << std::flush;
+    HANDLE semaphores[7] = {
+        semaphore_a,
+        semaphore_b,
+        semaphore_c,
+        semaphore_d,
+        semaphore_e,
+        semaphore_f,
+        semaphore_g
+    };
+    WaitForMultipleObjects(7, semaphores, TRUE, 0L);
     for (int i = 0; i < 4; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'k' << std::flush;
@@ -199,26 +183,19 @@ DWORD WINAPI thread_k(LPVOID lpParam) {
 }
 DWORD WINAPI thread_m(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
-    WaitForSingleObject(semaphore_a, 0L);
-    std::cerr << 'A' << std::flush;
-    WaitForSingleObject(semaphore_b, 0L);
-    std::cerr << 'B' << std::flush;
-    WaitForSingleObject(semaphore_c, 0L);
-    std::cerr << 'C' << std::flush;
-    WaitForSingleObject(semaphore_d, 0L);
-    std::cerr << 'D' << std::flush;
-    WaitForSingleObject(semaphore_e, 0L);
-    std::cerr << 'E' << std::flush;
-    WaitForSingleObject(semaphore_f, 0L);
-    std::cerr << 'F' << std::flush;
-    WaitForSingleObject(semaphore_g, 0L);
-    std::cerr << 'G' << std::flush;
-    WaitForSingleObject(semaphore_h, 0L);
-    std::cerr << 'H' << std::flush;
-    WaitForSingleObject(semaphore_i, 0L);
-    std::cerr << 'I' << std::flush;
-    WaitForSingleObject(semaphore_k, 0L);
-    std::cerr << 'K' << std::flush;
+    HANDLE semaphores[10] = {
+        semaphore_a,
+        semaphore_b,
+        semaphore_c,
+        semaphore_d,
+        semaphore_e,
+        semaphore_f,
+        semaphore_g,
+        semaphore_h,
+        semaphore_i,
+        semaphore_k
+    };
+    WaitForMultipleObjects(10, semaphores, TRUE, 0L);
     for (int i = 0; i < 4; i++) {
         WaitForSingleObject(lock, 0L);
         std::cout << 'm' << std::flush;

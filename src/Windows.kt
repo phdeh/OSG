@@ -47,9 +47,22 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                 "DWORD WINAPI thread_${it.name}(LPVOID lpParam) {\n" +
                         "    UNREFERENCED_PARAMETER(lpParam);\n"
             )
-            it.waitsFor.sortedBy { i -> i.name }.forEach { i ->
-                sb.append("    WaitForSingleObject(semaphore_${i.name}, 0L);\n")
-                sb.append("    std::cerr << \'${i.name.capitalize()}\' << std::flush;\n")
+            if (it.waitsFor.size <= 1)
+                it.waitsFor.sortedBy { i -> i.name }.forEach { i ->
+                    sb.append("    WaitForSingleObject(semaphore_${i.name}, 0L);\n")
+                    sb.append("    std::cerr << \'${i.name.capitalize()}\' << std::flush;\n")
+                }
+            else {
+                sb.append("    HANDLE semaphores[${it.waitsFor.size}] = {\n")
+                it.waitsFor.sortedBy { i -> i.name }.forEachIndexed { i, j ->
+                    sb.append("        semaphore_${j.name}")
+                    if (i != it.waitsFor.size - 1)
+                        sb.append(",\n")
+                    else
+                        sb.append("\n")
+                }
+                sb.append("    };\n" +
+                        "    WaitForMultipleObjects(${it.waitsFor.size}, semaphores, TRUE, 0L);\n")
             }
             sb.append(
                 "    for (int i = 0; i < ${it.iterations * 4}; i++) {\n" +
@@ -59,14 +72,9 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                         "        sleep_ms(SLEEP_TIME);\n" +
                         "    }\n"
             )
-            if (it.waitedBy > 1)
+            if (it.waitedBy >= 1)
                 sb.append(
-                    "    for (int i = 0; i < ${it.waitedBy}; i++)\n" +
-                            "        ReleaseSemaphore(semaphore_${it.name}, 1, NULL);\n"
-                )
-            else if (it.waitedBy == 1)
-                sb.append(
-                    "    ReleaseSemaphore(semaphore_${it.name}, 1, NULL);\n"
+                    "    ReleaseSemaphore(semaphore_${it.name}, ${it.waitedBy}, NULL);\n"
                 )
             sb.append(
                 "    return TRUE;\n" +
@@ -109,26 +117,30 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
     if (this.isNotEmpty()) {
         sb.append("    int err;\n")
         this.sortedBy { it.name }.forEachIndexed { i, it ->
-            sb.append("    aThread[$i] = CreateThread( \n" +
-                    "        NULL,       // default security attributes\n" +
-                    "        0,          // default stack size\n" +
-                    "        (LPTHREAD_START_ROUTINE) thread_${it.name}, \n" +
-                    "        NULL,       // no thread function arguments\n" +
-                    "        0,          // default creation flags\n" +
-                    "        &ThreadID); // receive thread identifier" +
-                    "\n" +
-                    "    if(aThread[$i] == NULL) {\n" +
-                    "        printf(\"CreateThread error: %d\\n\", GetLastError());\n" +
-                    "        return 1;\n" +
-                    "    }\n\n")
+            sb.append(
+                "    aThread[$i] = CreateThread( \n" +
+                        "        NULL,       // default security attributes\n" +
+                        "        0,          // default stack size\n" +
+                        "        (LPTHREAD_START_ROUTINE) thread_${it.name}, \n" +
+                        "        NULL,       // no thread function arguments\n" +
+                        "        0,          // default creation flags\n" +
+                        "        &ThreadID); // receive thread identifier" +
+                        "\n" +
+                        "    if(aThread[$i] == NULL) {\n" +
+                        "        printf(\"CreateThread error: %d\\n\", GetLastError());\n" +
+                        "        return 1;\n" +
+                        "    }\n\n"
+            )
         }
     }
 
     sb.append("    WaitForMultipleObjects(${this.size}, aThread, TRUE, INFINITE);\n")
 
-    sb.append("    CloseHandle(lock);\n" +
-            "    for(int i = 0; i < ${this.size}; i++)\n" +
-            "        CloseHandle(aThread[i]);\n")
+    sb.append(
+        "    CloseHandle(lock);\n" +
+                "    for(int i = 0; i < ${this.size}; i++)\n" +
+                "        CloseHandle(aThread[i]);\n"
+    )
 
     if (this.any { it.waitedBy > 0 }) {
         this.sortedBy { it.name }.forEach {
@@ -207,6 +219,6 @@ val windowsLabH = "//\n" +
         "#endif //LAB3_LAB3_H"
 
 val windowsRunBat = "del lab3.h.gch\n" +
-            "del test.exe\n" +
-            "\"C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\bin\\g++.exe\" --std=c++11 -g main.cpp lab3.cpp -o test.exe\n" +
-            "\"C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\bin\\gdb.exe\" -batch -ex run test.exe\n"
+        "del test.exe\n" +
+        "\"C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\bin\\g++.exe\" --std=c++11 -g main.cpp lab3.cpp -o test.exe\n" +
+        "\"C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\bin\\gdb.exe\" -batch -ex run test.exe\n"
