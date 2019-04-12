@@ -37,7 +37,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
         sb.append(";\n")
     }
     sb.append(
-        "unsigned int lab2_task_number() {\n" +
+        "unsigned int lab3_task_number() {\n" +
                 "    return $variant;\n" +
                 "}\n" +
                 "\n"

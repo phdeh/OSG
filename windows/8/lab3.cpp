@@ -23,7 +23,7 @@ HANDLE semaphore_a,
       semaphore_d,
       semaphore_e,
       semaphore_f;
-unsigned int lab2_task_number() {
+unsigned int lab3_task_number() {
     return 8;
 }
 
