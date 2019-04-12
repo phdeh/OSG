@@ -65,10 +65,10 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                 )
             else if (it.waitedBy == 1)
                 sb.append(
-                    "    ReleaseSemaphore(semaphore_${it.name});\n"
+                    "    ReleaseSemaphore(semaphore_${it.name}, 1, NULL);\n"
                 )
             sb.append(
-                "    return ptr;\n" +
+                "    return TRUE;\n" +
                         "}\n"
             )
         }
@@ -94,7 +94,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                     "    semaphore_${it.name} = CreateSemaphore( \n" +
                             "        NULL,           // default security attributes\n" +
                             "        0,  // initial count\n" +
-                            "        MAX_SEM_COUNT,  // maximum count\n" +
+                            "        ${it.waitedBy},  // maximum count\n" +
                             "        NULL);          // unnamed semaphore" +
                             "\n" +
                             "    if (semaphore_${it.name} == NULL) {\n" +
@@ -116,17 +116,17 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                     "        0,          // default creation flags\n" +
                     "        &ThreadID); // receive thread identifier" +
                     "\n" +
-                    "    if( aThread[$i] == NULL ) {\n" +
+                    "    if(aThread[$i] == NULL) {\n" +
                     "        printf(\"CreateThread error: %d\\n\", GetLastError());\n" +
                     "        return 1;\n" +
                     "    }\n\n")
         }
     }
 
-    sb.append("    WaitForMultipleObjects(THREADCOUNT, aThread, TRUE, INFINITE);\n")
+    sb.append("    WaitForMultipleObjects(${this.size}, aThread, TRUE, INFINITE);\n")
 
     sb.append("    CloseHandle(lock);\n" +
-            "    for( i=0; i < ${this.size}; i++ )\n" +
+            "    for(int i = 0; i < ${this.size}; i++)\n" +
             "        CloseHandle(aThread[i]);\n")
 
     if (this.any { it.waitedBy > 0 }) {

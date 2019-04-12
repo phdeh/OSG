@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f986218-4502-44e0-a27c-7d7419a8e42b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/OSG/META-INF/OSG.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSG/META-INF/OSG.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Windows.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Windows.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/windows/4/lab3.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+            <state relative-caret-position="269">
+              <caret line="209" column="12" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -71,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Windows.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+            <state relative-caret-position="501">
+              <caret line="118" column="47" lean-forward="true" selection-start-line="118" selection-start-column="47" selection-end-line="118" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -109,10 +109,14 @@
       <find>count</find>
       <find>id</find>
       <find>thread_${</find>
+      <find>ptr</find>
+      <find>max_</find>
+      <find>++</find>
     </findStrings>
     <replaceStrings>
       <replace>Semaphore${it.name.capitalze()}</replace>
       <replace>capitalize</replace>
+      <replace>-=-1</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -240,7 +244,7 @@
       <updated>1554194079389</updated>
       <workItem from="1554357029136" duration="1328000" />
       <workItem from="1554757350225" duration="4865000" />
-      <workItem from="1555067677282" duration="4506000" />
+      <workItem from="1555067677282" duration="4920000" />
     </task>
     <task id="LOCAL-00001" summary="Windows test">
       <created>1555088496789</created>
@@ -249,11 +253,32 @@
       <option name="project" value="LOCAL" />
       <updated>1555088496789</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Header fix">
+      <created>1555088557147</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555088557147</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Header fix 2">
+      <created>1555088588560</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555088588560</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Indices fix">
+      <created>1555088665911</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1555088665912</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12682000" />
+    <option name="totallyTimeSpent" value="13096000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -308,7 +333,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Windows test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Windows test" />
+    <MESSAGE value="Header fix" />
+    <MESSAGE value="Header fix 2" />
+    <MESSAGE value="Indices fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Indices fix" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/kotlin/collections/Collections.kt">
@@ -381,13 +409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/windows/4/lab3.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/unix/4/lab2.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -395,10 +416,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/windows/4/lab3.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="209" column="12" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Windows.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        <state relative-caret-position="501">
+          <caret line="118" column="47" lean-forward="true" selection-start-line="118" selection-start-column="47" selection-end-line="118" selection-end-column="47" />
         </state>
       </provider>
     </entry>
