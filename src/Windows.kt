@@ -49,6 +49,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
             )
             it.waitsFor.sortedBy { i -> i.name }.forEach { i ->
                 sb.append("    WaitForSingleObject(semaphore_${i.name}, 0L);\n")
+                sb.append("    std::cerr << \'${i.name.capitalize()}\' << std::flush;\n")
             }
             sb.append(
                 "    for (int i = 0; i < ${it.iterations * 4}; i++) {\n" +
