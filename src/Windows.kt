@@ -3,6 +3,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
     sb.append(
         "#include \"lab3.h\"\n" +
                 "\n" +
+                "#include <stdio.h>\n" +
                 "#include <windows.h>\n" +
                 "#include <iostream>\n" +
                 "\n" +
@@ -50,7 +51,6 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
             if (it.waitsFor.size <= 1)
                 it.waitsFor.sortedBy { i -> i.name }.forEach { i ->
                     sb.append("    WaitForSingleObject(semaphore_${i.name}, INFINITE);\n")
-                    sb.append("    std::cerr << \'${i.name.capitalize()}\' << std::flush;\n")
                 }
             else {
                 sb.append("    HANDLE semaphores[${it.waitsFor.size}] = {\n")
@@ -92,7 +92,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                 "        NULL);             // unnamed mutex" +
                 "\n" +
                 "    if (lock == NULL) {\n" +
-                "        printf(\"CreateMutex error: %d\\n\", GetLastError());\n" +
+                "        std::cerr << \"CreateMutex error: \" << GetLastError() << '\\n';\n" +
                 "        return 1;\n" +
                 "    }\n\n"
     )
@@ -107,7 +107,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                             "        NULL);          // unnamed semaphore" +
                             "\n" +
                             "    if (semaphore_${it.name} == NULL) {\n" +
-                            "        printf(\"CreateSemaphore error: %d\\n\", GetLastError());\n" +
+                            "        std::cerr << \"CreateSemaphore error: \" << GetLastError() << '\\n';\n" +
                             "        return 1;\n" +
                             "    }\n\n"
                 )
@@ -127,7 +127,7 @@ fun List<ThreadTask>.toWindowsCode(variant: Int): String {
                         "        &ThreadID); // receive thread identifier" +
                         "\n" +
                         "    if(aThread[$i] == NULL) {\n" +
-                        "        printf(\"CreateThread error: %d\\n\", GetLastError());\n" +
+                        "        std::cerr << \"CreateThread error: \" << GetLastError() << '\\n';\n" +
                         "        return 1;\n" +
                         "    }\n\n"
             )

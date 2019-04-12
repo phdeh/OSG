@@ -1,5 +1,6 @@
 #include "lab3.h"
 
+#include <stdio.h>
 #include <windows.h>
 #include <iostream>
 
@@ -64,7 +65,6 @@ DWORD WINAPI thread_c(LPVOID lpParam) {
 DWORD WINAPI thread_d(LPVOID lpParam) {
     UNREFERENCED_PARAMETER(lpParam);
     WaitForSingleObject(semaphore_a, INFINITE);
-    std::cerr << 'A' << std::flush;
     for (int i = 0; i < 4; i++) {
         WaitForSingleObject(lock, INFINITE);
         std::cout << 'd' << std::flush;
@@ -196,7 +196,7 @@ int lab3_init() {
         FALSE,             // initially not owned
         NULL);             // unnamed mutex
     if (lock == NULL) {
-        printf("CreateMutex error: %d\n", GetLastError());
+        std::cerr << "CreateMutex error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -206,7 +206,7 @@ int lab3_init() {
         7,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_a == NULL) {
-        printf("CreateSemaphore error: %d\n", GetLastError());
+        std::cerr << "CreateSemaphore error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -216,7 +216,7 @@ int lab3_init() {
         6,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_b == NULL) {
-        printf("CreateSemaphore error: %d\n", GetLastError());
+        std::cerr << "CreateSemaphore error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -226,7 +226,7 @@ int lab3_init() {
         5,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_c == NULL) {
-        printf("CreateSemaphore error: %d\n", GetLastError());
+        std::cerr << "CreateSemaphore error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -236,7 +236,7 @@ int lab3_init() {
         6,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_d == NULL) {
-        printf("CreateSemaphore error: %d\n", GetLastError());
+        std::cerr << "CreateSemaphore error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -246,7 +246,7 @@ int lab3_init() {
         5,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_e == NULL) {
-        printf("CreateSemaphore error: %d\n", GetLastError());
+        std::cerr << "CreateSemaphore error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -256,7 +256,7 @@ int lab3_init() {
         2,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_f == NULL) {
-        printf("CreateSemaphore error: %d\n", GetLastError());
+        std::cerr << "CreateSemaphore error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -266,7 +266,7 @@ int lab3_init() {
         1,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_g == NULL) {
-        printf("CreateSemaphore error: %d\n", GetLastError());
+        std::cerr << "CreateSemaphore error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -276,7 +276,7 @@ int lab3_init() {
         1,  // maximum count
         NULL);          // unnamed semaphore
     if (semaphore_h == NULL) {
-        printf("CreateSemaphore error: %d\n", GetLastError());
+        std::cerr << "CreateSemaphore error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -289,7 +289,7 @@ int lab3_init() {
         0,          // default creation flags
         &ThreadID); // receive thread identifier
     if(aThread[0] == NULL) {
-        printf("CreateThread error: %d\n", GetLastError());
+        std::cerr << "CreateThread error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -301,7 +301,7 @@ int lab3_init() {
         0,          // default creation flags
         &ThreadID); // receive thread identifier
     if(aThread[1] == NULL) {
-        printf("CreateThread error: %d\n", GetLastError());
+        std::cerr << "CreateThread error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -313,7 +313,7 @@ int lab3_init() {
         0,          // default creation flags
         &ThreadID); // receive thread identifier
     if(aThread[2] == NULL) {
-        printf("CreateThread error: %d\n", GetLastError());
+        std::cerr << "CreateThread error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -325,7 +325,7 @@ int lab3_init() {
         0,          // default creation flags
         &ThreadID); // receive thread identifier
     if(aThread[3] == NULL) {
-        printf("CreateThread error: %d\n", GetLastError());
+        std::cerr << "CreateThread error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -337,7 +337,7 @@ int lab3_init() {
         0,          // default creation flags
         &ThreadID); // receive thread identifier
     if(aThread[4] == NULL) {
-        printf("CreateThread error: %d\n", GetLastError());
+        std::cerr << "CreateThread error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -349,7 +349,7 @@ int lab3_init() {
         0,          // default creation flags
         &ThreadID); // receive thread identifier
     if(aThread[5] == NULL) {
-        printf("CreateThread error: %d\n", GetLastError());
+        std::cerr << "CreateThread error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -361,7 +361,7 @@ int lab3_init() {
         0,          // default creation flags
         &ThreadID); // receive thread identifier
     if(aThread[6] == NULL) {
-        printf("CreateThread error: %d\n", GetLastError());
+        std::cerr << "CreateThread error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -373,7 +373,7 @@ int lab3_init() {
         0,          // default creation flags
         &ThreadID); // receive thread identifier
     if(aThread[7] == NULL) {
-        printf("CreateThread error: %d\n", GetLastError());
+        std::cerr << "CreateThread error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -385,7 +385,7 @@ int lab3_init() {
         0,          // default creation flags
         &ThreadID); // receive thread identifier
     if(aThread[8] == NULL) {
-        printf("CreateThread error: %d\n", GetLastError());
+        std::cerr << "CreateThread error: " << GetLastError() << '\n';
         return 1;
     }
 
@@ -397,7 +397,7 @@ int lab3_init() {
         0,          // default creation flags
         &ThreadID); // receive thread identifier
     if(aThread[9] == NULL) {
-        printf("CreateThread error: %d\n", GetLastError());
+        std::cerr << "CreateThread error: " << GetLastError() << '\n';
         return 1;
     }
 
